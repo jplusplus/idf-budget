@@ -3,14 +3,16 @@
 ## Installation
 
 ```
-        _   .--------------------------------.
-      _|o|_ |    Application brought to you  |
-       (_)  |    with the amazing Yeoman!    |
-     / \Y/ \;-,______________________________|
-    ||  :  |\//
-    (| --- |
-      |_|_|
-       \ /
+     _-----_
+    |       |
+    |--(o)--|   .----------------------------.
+   `---------´  | Application brought to you |
+    ( _´U`_ )   |  with the amazing Yeoman!  |
+    /___A___\   '____________________________'
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+
 ```
 
 Install command line tools:
