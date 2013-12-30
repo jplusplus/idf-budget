@@ -12,7 +12,6 @@
      |  ~  |
    __'.___.'__
  ´   `  |° ´ Y `
-
 ```
 
 Install command line tools:
