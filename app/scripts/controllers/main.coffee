@@ -1,0 +1,1 @@
+angular.module('idfBudgetApp').controller 'MainCtrl', ($scope) ->
