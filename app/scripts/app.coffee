@@ -7,5 +7,6 @@ angular.module('idfBudgetApp', [
     .when '/',
       templateUrl: 'views/main.html'
       controller: 'MainCtrl'
+      reloadOnSearch: no
     .otherwise
       redirectTo: '/'

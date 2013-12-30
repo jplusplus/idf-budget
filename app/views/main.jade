@@ -1,1 +1,31 @@
-| \o/
+//- Landscape part that move behind everything
+include landscape.jade
+
+//- Logo at the top of the application
+.logo
+    //- This logo is in to sizes
+    .big-one
+    .small-one(ng-click="to('home')")
+
+
+//- Introduction to understand the app
+.workspace.workspace-home.text-center
+    p
+        | Les conditions de vie des Francilien(ne)s<br />
+        | sibt au cœur du budget 2914 de l'Île-de-France.<br />
+        | Naviguez dans les 15 grands domaines d'investissement de la Région.
+    p
+        a.bt.bt-commencez(ng-click="to('detail')")
+            | Commencez l'experience
+
+//- Dynamic part that show the details of every zone
+.workspace.workspace-detail
+    p.text-center.bt-out
+        a.bt.bt-global(ng-click="to('global')")
+            | Budget global
+
+//- Global budget
+.workspace.workspace-global
+    p.text-center.bt-out
+        a.bt.bt-detail(ng-click="to('detail')")
+            | Budget par secteur

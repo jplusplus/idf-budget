@@ -1,0 +1,191 @@
+.landscape {
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0;
+    height:560px;
+    z-index:$zindex-landscape;
+    overflow:hidden;
+
+    .clouds {
+        position:absolute;
+        left:0px;
+        top:0px;
+        height:168px;
+        width:1870px;
+        background:url("../images/landscape/nuages.png") no-repeat;
+        z-index:$zindex-landscape + 10;
+    }
+
+    .all {
+        position:absolute;
+        left:0px;
+        top:0px;
+        height:560px;
+        width:4095px;
+        background:url("../images/landscape/frise.png") no-repeat;
+        z-index:$zindex-landscape + 20;
+    }
+
+    .foreground {
+        position:absolute;
+        left:0px;
+        top:143px;
+        height:205px;
+        width:7894px;
+        background:url("../images/landscape/premier_plan.png") no-repeat;
+        z-index:$zindex-landscape + 30;
+    }
+
+    .zone {
+        position:absolute;
+        @include opacity(0);
+
+        img {
+            display:block;
+        }
+
+        &:hover{
+            @include opacity(1);
+        }
+    }
+
+
+    .zone1 {
+        left:355px;
+        top:91px;
+        z-index:$zindex-landscape+100;
+        width:250px;
+        height:212px;
+        opacity:0;
+    }
+
+    .zone2{
+        left:628px;
+        top:86px;
+        z-index:$zindex-landscape+101;
+        width:342px;
+        height:191px;
+        opacity:0;
+    }
+
+    .zone3{
+        left:896px;
+        top:56px;
+        z-index:$zindex-landscape+103;
+        width:257px;
+        height:232px;
+        opacity:0;
+    }
+
+    .zone4{
+        left:1048px;
+        top:90px;
+        z-index:$zindex-landscape+104;
+        width:432px;
+        height:194px;
+        opacity:0;
+    }
+
+    .zone5{
+        left:1479px;
+        top:0px;
+        z-index:$zindex-landscape+105;
+        width:158px;
+        height:269px;
+        opacity:0;
+    }
+
+    .zone6{
+        left:1562px;
+        top:51px;
+        z-index:$zindex-landscape+100;
+        width:251px;
+        height:231px;
+        opacity:0;
+    }
+
+    .zone7{
+        left:1718px;
+        top:68px;
+        z-index:$zindex-landscape+100;
+        width:333px;
+        height:206px;
+        opacity:0;
+    }
+
+    .zone8{
+        left:2112px;
+        top:62px;
+        z-index:$zindex-landscape+107;
+        width:324px;
+        height:215px;
+        opacity:0;
+    }
+
+    .zone9{
+        left:2383px;
+        top:118px;
+        z-index:$zindex-landscape+100;
+        width:273px;
+        height:172px;
+        opacity:0;
+    }
+
+
+    .zone10{
+        left:2550px;
+        top:115px;
+        z-index:$zindex-landscape+110;
+        width:323px;
+        height:179px;
+        opacity:0;
+    }
+
+
+    .zone11{
+        left:2766px;
+        top:72px;
+        z-index:$zindex-landscape+110;
+        width:272px;
+        height:208px;
+        opacity:0;
+    }
+
+    .zone12{
+        left:2966px;
+        top:64px;
+        z-index:$zindex-landscape+112;
+        width:265px;
+        height:214px;
+        opacity:0;
+    }
+
+    .zone13{
+        left:3114px;
+        top:95px;
+        z-index:$zindex-landscape+100;
+        width:251px;
+        height:190px;
+        opacity:0;
+    }
+
+    .zone14{
+        left:3277px;
+        top:48px;
+        z-index:$zindex-landscape+115;
+        width:215px;
+        height:229px;
+        opacity:0;
+    }
+
+    .zone15{
+        left:3424px;
+        top:62px;
+        z-index:$zindex-landscape+116;
+        width:671px;
+        height:245px;
+        opacity:0;
+    }
+
+}

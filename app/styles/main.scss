@@ -1,2 +1,133 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+// Stack settings
+$zindex-landscape: 1000;
+$zindex-workspace: $zindex-landscape+1000;
+$zindex-logo: $zindex-workspace+1000;
+
+@import 'variables.scss';
 @import 'sass-bootstrap/lib/bootstrap';
+
+@import 'landscape.scss';
+
+html body {
+    overflow:hidden;
+    background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;
+}
+
+.bt {
+    @include hide-text();
+    display:inline-block;
+    cursor:pointer;
+
+    &:hover {
+        background-position: bottom left;
+    }
+
+    &.bt-commencez {
+        width:253px;
+        height:37px;
+        background:url("../images/ui/bt_commencez.png") 0 0;
+    }
+
+    &.bt-detail {
+        width:212px;
+        height:44px;
+        background:url("../images/ui/bt_detail.png") 0 0;
+    }
+
+    &.bt-global {
+        width:179px;
+        height:44px;
+        background:url("../images/ui/bt_global.png") 0 0;
+    }
+}
+
+.logo {
+    z-index:$zindex-logo;
+    position:absolute;
+    top:0;
+    left:50%;
+    height:168px;
+    width:266px;
+    margin-left:-1*266px/2;
+
+    .big-one, .small-one {
+        position:absolute;
+        top:-168px;
+        left:0;
+        display:block;
+        height:100%;
+        background:url("../images/ui/logo.png");
+        @include transition(top 0.6s);
+    }
+
+    .big-one {
+        width:100%;
+        .home & {
+            top:0;
+        }
+    }
+
+    .small-one {
+        cursor:pointer;
+        width:157px;
+        left: ( 266px - 157px ) / 2;
+        background-position:-266px 0;
+        .detail &, .global & {
+            top:0;
+        }
+    }
+
+}
+
+.workspace {
+    z-index:$zindex-workspace;
+    position:absolute;
+    top:300px - 30px;
+    left:50%;
+    margin-left:-1px*920px/2px;
+    background:no-repeat center top;
+    width:920px;
+    padding-top:30px + 40px;
+    $trans:left 0.6s, top 0.6s;
+    @include transition($trans);
+
+    .bt-out {
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        margin-top:-20px;
+    }
+
+    &.workspace-home {
+        background-image:url("../images/ui/cartouche_home.png");
+        height:294px;
+        left:-50%;
+        font-weight: 600;
+        font-size:17px;
+        .home & {
+            left:50%;
+        }
+    }
+
+    &.workspace-detail {
+        background-image:url("../images/ui/cartouche_detail.png");
+        height:240px;
+        left:150%;
+        .detail & {
+            left:50%;
+        }
+    }
+
+    &.workspace-global {
+        background-image:url("../images/ui/cartouche_global.png");
+        height:478px;
+        left:50%;
+        top:1000px;
+
+        .global & {
+            top:300px - 30px;
+        }
+    }
+}
