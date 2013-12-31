@@ -301,26 +301,38 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'bower_components/**/*',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }]
+          files: [
+            {
+              expand: true,
+              dest: '<%= yeoman.dist %>',
+              cwd: 'server',
+              src: '*',
+              rename: function (dest, src) {
+                  var path = require('path');
+                  if (src === 'distpackage.json') {
+                      return path.join(dest, 'package.json');
+                  }
+                  return path.join(dest, src);
+              }
+          },{
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              'data/*',
+              'bower_components/*',
+            ]
+          },{
+            expand: true,
+            dot: true,
+            cwd: '.tmp',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              'views/*',
+            ]
+          }
+        ]
       },
       styles: {
         expand: true,
