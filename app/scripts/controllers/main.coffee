@@ -22,16 +22,16 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
     # Read location argument to update the screen
     readLocation = ->        
+        # Are we coming from the homepage?
+        wasHome = $scope.screen is 'home'
+        # Read the new name
         $scope.screen = $location.search().screen or 'home'
-        switch $scope.screen 
-            # Go to the begining of the landscape when we switch to detail
-            when 'detail' then $scope.zone(DEFAULT_ZONE)      
-            # Go to the middle of the landscape when we switch to home
-            when 'home' then $scope.zone(HOME_ZONE)
-        switch $scope.screen 
-            # Scroll down to global
-            when 'global' then FRAME.scrollTo(top: 250, left:0, 600)
-            else FRAME.scrollTo(top: 0, left:0, 600)        
+        # Go to the begining of the landscape when we switch to detail
+        if $scope.screen is 'detail' and wasHome then $scope.zone(DEFAULT_ZONE)
+        # Scroll down to global
+        if $scope.screen is 'global' then FRAME.scrollTo(top: 250, left:0, 600)
+        # Or reset the scroll
+        else FRAME.scrollTo(0, 600)        
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
