@@ -1,4 +1,5 @@
-$zindex-landscape: 1000;
+@import 'variables.scss';
+@import 'sass-bootstrap/lib/mixins';
 
 #landscape {
     position:absolute;

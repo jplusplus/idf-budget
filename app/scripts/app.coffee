@@ -2,7 +2,6 @@ angular.module('idfBudgetApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ng-iscroll'
 ]).config ($routeProvider) ->
   $routeProvider
     .when '/',

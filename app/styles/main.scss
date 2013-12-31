@@ -1,10 +1,3 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-// Stack settings
-$zindex-landscape: 1000;
-$zindex-workspace: $zindex-landscape+1000;
-$zindex-nav      : $zindex-workspace+1000;
-$zindex-logo     : $zindex-nav+1000;
-
 @import 'variables.scss';
 @import 'sass-bootstrap/lib/bootstrap';
 
