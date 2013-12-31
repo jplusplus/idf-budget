@@ -219,7 +219,12 @@ html body {
 
 footer {
     z-index:$zindex-footer;
-    position:fixed;
-    bottom:10px;
-    left:20px;
+    
+    position:absolute;
+    left:50%;
+    top:520px;
+    width:960px;
+    height:560px;
+    margin-left:-480px;
+    padding:0 20px;
 }
