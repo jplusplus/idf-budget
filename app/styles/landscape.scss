@@ -1,11 +1,11 @@
-.landscape {
+#landscape {
     position:absolute;
     left:0px;
     top:0px;
-    right:0;
+    right:0px;
     height:560px;
     z-index:$zindex-landscape;
-    overflow:hidden;
+    overflow:auto;
 
     .clouds {
         position:absolute;
