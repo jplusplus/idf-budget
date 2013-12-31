@@ -8,6 +8,7 @@ $zindex-logo     : $zindex-nav+1000;
 @import 'variables.scss';
 @import 'sass-bootstrap/lib/bootstrap';
 
+@import 'tools.scss';
 @import 'landscape.scss';
 
 html body {
@@ -15,7 +16,7 @@ html body {
 
     .main {
         min-width:960px;
-        max-height:560px;
+        min-height:560px;
         background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;        
     }
 
@@ -33,9 +34,6 @@ html body {
         margin-bottom:0;
     }
 
-    .color-inherit {        
-        color:inherit;
-    }
 
 }
 
@@ -69,7 +67,7 @@ html body {
 
 .logo {
     z-index:$zindex-logo;
-    position:absolute;
+    position:fixed;
     top:0;
     left:50%;
     height:168px;
@@ -167,6 +165,7 @@ html body {
     background:no-repeat center top;
     width:920px;
     padding:10px 30px;
+    margin-bottom:200px;
     $trans:left 0.6s, top 0.6s;
     @include transition($trans);
 
@@ -175,7 +174,7 @@ html body {
         top:100%;
         left:0;
         right:0;
-        margin-top:-20px;
+        margin-top:-25px;
     }
 
     &.workspace-home {

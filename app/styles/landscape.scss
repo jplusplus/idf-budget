@@ -7,7 +7,7 @@ $zindex-landscape: 1000;
     right:0px;
     height:560px;
     z-index:$zindex-landscape;
-    overflow:auto;
+    overflow:hidden;
 
     .clouds {
         position:absolute;
@@ -41,7 +41,57 @@ $zindex-landscape: 1000;
 
     .zone {
         cursor: pointer;
-        position:absolute;        
+        position:absolute;                
+        text-align:center;
+
+
+        img {
+            z-index:$zindex-landscape + 25;
+            position:absolute;
+            top:0;
+            left:0;
+            display:block;
+            @include transition(0.6s);
+            @include opacity(0);
+        }
+
+        .detail &.active img {
+            @include opacity(1);
+        }
+
+        .name {
+            position:relative;            
+            z-index:$zindex-landscape + 30;
+            min-width:70px;
+            max-width:250px;
+            padding:5px 10px;
+            background:white;
+            margin:0 auto;
+            text-align: center;
+            display:inline-block;
+            border-radius:3px;
+            font-weight:bold;
+            text-transform: uppercase;
+            top:-20px;
+            @include opacity(0);
+            @include transition(0.6s);
+            @include box-shadow(0 0 10px 0 rgba($text-color, 0.2));
+
+            &:after {
+                content:url("../images/ui/triangle-reverse.png");                
+                position:absolute;
+                bottom:-15px;
+                left:50%;
+                margin-left:-13px;
+                display:block;
+            }
+        }
+
+        .lt-ie9 .detail &:hover .name,
+        .detail &:not(.active):hover .name {
+            top:0px;
+            @include opacity(1);
+        }
 
         .clickable {
             position:absolute;
@@ -49,18 +99,7 @@ $zindex-landscape: 1000;
             top:0;
             left:0;
             right:0;
-            bottom:0;
-        }
-
-        img {
-            position:relative;
-            z-index:$zindex-landscape + 25;
-            @include opacity(0);
-            display:block;
-        }
-
-        .detail &:hover img, .detail &.active img {
-            @include opacity(1);
+            bottom:0;            
         }
     }
 

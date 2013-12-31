@@ -1,7 +1,7 @@
 angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http) ->
     # Constants
-    DEFAULT_ZONE = 15
-    HOME_ZONE    = 15
+    DEFAULT_ZONE = 1
+    HOME_ZONE    = 8
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods outside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────   
@@ -15,9 +15,21 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http)
             # Transform each row to an object
             rows = _.map rows, (r)-> _.object(base, r)        
     # Refresh active detail data
-    refreshDetail = ()->        
+    refreshDetail = ->        
         # Find the data related to this zone
-        $scope.detail = _.findWhere $scope.details, id: $scope.activeZone if $scope.details?
+        $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
+    # Read location argument to update the screen
+    readLocation = ->        
+        $scope.screen = $location.search().screen or 'home'
+        switch $scope.screen 
+            # Go to the begining of the landscape when we switch to detail
+            when 'detail' then $scope.zone(DEFAULT_ZONE)      
+            # Go to the middle of the landscape when we switch to home
+            when 'home' then $scope.zone(HOME_ZONE)
+        switch $scope.screen 
+            # Scroll down to global
+            when 'global' then $(window).scrollTo(top: 250, left:0, 600)
+            else $(window).scrollTo(top: 0, left:0, 600)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -34,23 +46,22 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     $scope.details    = []
     $scope.activeZone = HOME_ZONE
-    $scope.screen     = $location.search().screen or 'home'
+    $scope.screen     = 'home'
+    # Read the location by default
+    readLocation()
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # XHR data loading
     # ──────────────────────────────────────────────────────────────────────────────────────────────    
     # Get all details
-    $http.get('/data/details.csv').success (raw)-> 
-        $scope.details = csvToObject(raw)
+    $http.get('/data/details.csv').success (raw)->         
+        # Parses and sorts data by id
+        $scope.details = _.sortBy csvToObject(raw), (d)-> d.id
+        # Then refresh the active detail
         refreshDetail()        
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watchers
     # ──────────────────────────────────────────────────────────────────────────────────────────────    
     # Watch for new selected zone
-    $scope.$watch "activeZone", (val)-> refreshDetail()
+    $scope.$watch "activeZone", refreshDetail
     # Read the location's search to update the scope
-    $scope.$on '$routeUpdate', =>
-        $scope.screen = $location.search().screen or 'home'
-        # Go to the begining of the landscape when we switch to detail
-        $scope.zone(DEFAULT_ZONE) if $scope.screen is 'detail'        
-        # Go to the middle of the landscape when we switch to home
-        $scope.zone(HOME_ZONE) if $scope.screen is 'home'        
+    $scope.$on '$routeUpdate', readLocation
