@@ -10,8 +10,6 @@
     "angular-resource": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
-    "ng-iscroll": "*",
-    "iscroll": "~4.2.5",
     "jquery.scrollTo": "~1.4.7",
     "csv-js": "*",
     "underscore": "~1.5.2"
