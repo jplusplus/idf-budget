@@ -8,7 +8,11 @@
     width:960px;
     height:560px;
     z-index:$zindex-landscape;
-    overflow:hidden;
+    overflow:auto;
+    
+    .no-touch & {
+        overflow:hidden;
+    }
 
     .clouds {
         position:absolute;

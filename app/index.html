@@ -37,6 +37,7 @@
 
     <!-- build:js scripts/vendor.js-->
     <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
@@ -47,10 +48,19 @@
     <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <script src="bower_components/csv-js/csv.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/detectizr/detectizr.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <!-- endbower-->
     <!-- endbuild-->
+
     
     <!-- build:js({.tmp,app}) scripts/scripts.js-->
+    <script>
+        // Remove tap delay on touch screen
+        window.addEventListener('load', function() {
+            if(window.FastClick != undefined) FastClick.attach(document.body);
+        }, false);
+    </script>
     <script src="scripts/app.js"></script>
     <script src="scripts/directives/landscape.js"></script>
     <script src="scripts/controllers/main.js"></script>
