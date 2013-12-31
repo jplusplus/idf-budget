@@ -1,0 +1,62 @@
+<!-- Navigation buttons-->
+<div class="nav">
+  <a ng-click="activeZone = activeZone - 1" ng-show="activeZone &gt; 1" class="previous"></a>
+  <a ng-click="activeZone  = activeZone + 1" ng-show="activeZone &lt; 15" class="next"></a>
+</div>
+
+<!-- Landscape part that move behind everything-->
+<div  ng-include="'views/landscape.html'"></div>
+
+<!-- Logo at the top of the application-->
+<div class="logo">
+  <!-- This logo is in to sizes-->
+  <div class="big-one"></div>
+  <div ng-click="to('home')" class="small-one"></div>
+</div>
+
+<!-- An overlay only visible on the home screen-->
+<div class="home-overlay"></div>
+
+<!-- Introduction to understand the app-->
+<div class="workspace workspace-home text-center">
+  <p>
+    Les conditions de vie des Francilien(ne)s<br />
+    sont au cœur du budget 2914 de l'Île-de-France.<br />
+    Naviguez dans les 15 grands domaines d'investissement de la Région.
+  </p>
+  <p><a ng-click="to('detail')" class="bt bt-commencez">Commencez l'experience</a></p>
+</div>
+
+<!-- Dynamic part that show the details of every zone-->
+<div class="workspace workspace-detail">
+  <h2 ng-style="{color: detail.color1}" class="text-center">{{detail.name}}</h2>
+  <div class="row">
+    <div class="col-xs-4"><img ng-src="./images/charts/{{activeZone}}.png" class="pull-right"/>
+      <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
+      <div ng-style="{color: detail.color1}">
+        <div class="color-inherit">
+          <h4>Investissement</h4>{{detail.investissement}} millions €  
+        </div>
+      </div>
+      <div ng-style="{color: detail.color2}">
+        <div class="color-inherit">
+          <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €  
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <h3>Axes forts </h3>
+      <p>{{detail.axes}}</p>
+    </div>
+    <div class="col-xs-4">       
+      <h3>Exemples </h3>
+    </div>
+  </div>
+  <p class="text-center bt-out"><a ng-click="to('global')" class="bt bt-global">Budget global</a></p>
+</div>
+
+<!-- Global budget-->
+<div class="workspace workspace-global text-center">   
+  <h2 class="top-50 bottom-30">Budget global</h2><img src="./images/charts/global.png"/>
+  <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
+</div>

@@ -42,35 +42,16 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
-      jade: {
-        files: ['<%= yeoman.app %>/{,*/}*.jade'],
-        tasks: ['jade']
-      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '.tmp/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/{,*/}*.html',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      }
-    },
-
-    jade: {
-      dist: {
-        options: {
-          pretty: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '.tmp',
-          src: '{,*/}*.jade',
-          ext: '.html'
-        }]
       }
     },
 
@@ -152,7 +133,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     'bower-install': {
       app: {
-        html: '<%= yeoman.app %>/index.jade',
+        html: '<%= yeoman.app %>/index.html',
         ignorePath: '<%= yeoman.app %>/'
       }
     },
@@ -231,18 +212,17 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
+      html: '<%= yeoman.app %>/index.html',
       options: {
         dest: '<%= yeoman.dist %>'
-      },
-      html: '.tmp/index.html'
+      }
     },
-
-    // Performs rewrites based on rev and the useminPrepare configuration
+    
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        dirs: ['<%= yeoman.dist %>']
       }
     },
 
@@ -301,20 +281,20 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-          files: [
-            {
-              expand: true,
-              dest: '<%= yeoman.dist %>',
-              cwd: 'server',
-              src: '*',
-              rename: function (dest, src) {
-                  var path = require('path');
-                  if (src === 'distpackage.json') {
-                      return path.join(dest, 'package.json');
-                  }
-                  return path.join(dest, src);
-              }
-          },{
+        files: [
+          {
+            expand: true,
+            dest: '<%= yeoman.dist %>',
+            cwd: 'server',
+            src: '*',
+            rename: function (dest, src) {
+                var path = require('path');
+                if (src === 'distpackage.json') {
+                    return path.join(dest, 'package.json');
+                }
+                return path.join(dest, src);
+            }
+          }, {
             expand: true,
             dot: true,
             cwd: '<%= yeoman.app %>',
@@ -322,14 +302,7 @@ module.exports = function (grunt) {
             src: [
               'data/*',
               'bower_components/*',
-            ]
-          },{
-            expand: true,
-            dot: true,
-            cwd: '.tmp',
-            dest: '<%= yeoman.dist %>',
-            src: [
-              'views/*',
+              '{,*/}*.html'
             ]
           }
         ]
@@ -345,7 +318,6 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'jade',
         'coffee:dist',
         'compass:server'
       ],
@@ -427,7 +399,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'jade',
     'bower-install',
     'useminPrepare',
     'concurrent:dist',
@@ -444,8 +415,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
     'build'
   ]);
 };
