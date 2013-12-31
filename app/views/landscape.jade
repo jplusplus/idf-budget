@@ -1,37 +1,37 @@
-#landscape
+#landscape(landscape, background=".clouds", wrapper=".all", listen="activeZone")
   .clouds
     //- Empty block that shows clouds
   .all
     //- Empty block that shows every zones
   .foreground
     //- Empty block that shows the foreground
-  .zone1.zone
+  .zone-1.zone(ng-click="zone(1)", ng-class="{active: activeZone == 1}")
     img(src='images/landscape/01-pilotis.png', width='250', height='212')
-  .zone2.zone
+  .zone-2.zone(ng-click="zone(2)", ng-class="{active: activeZone == 2}")
     img(src='images/landscape/02-gare.png', width='342', height='191')
-  .zone3.zone
+  .zone-3.zone(ng-click="zone(3)", ng-class="{active: activeZone == 3}")
     img(src='images/landscape/03-cinema.png', width='257', height='232')
-  .zone4.zone
+  .zone-4.zone(ng-click="zone(4)", ng-class="{active: activeZone == 4}")
     img(src='images/landscape/04-hopital.png', width='432', height='194')
-  .zone5.zone
+  .zone-5.zone(ng-click="zone(5)", ng-class="{active: activeZone == 5}")
     img(src='images/landscape/05-tour.png', width='158', height='269')
-  .zone6.zone
+  .zone-6.zone(ng-click="zone(6)", ng-class="{active: activeZone == 6}")
     img(src='images/landscape/06-conseil-regional.png', width='251', height='231')
-  .zone7.zone
+  .zone-7.zone(ng-click="zone(7)", ng-class="{active: activeZone == 7}")
     img(src='images/landscape/07-nouvel-amenagement.png', width='333', height='206')
-  .zone8.zone
+  .zone-8.zone(ng-click="zone(8)", ng-class="{active: activeZone == 8}")
     img(src='images/landscape/08-universite.png', width='324', height='215')
-  .zone9.zone
+  .zone-9.zone(ng-click="zone(9)", ng-class="{active: activeZone == 9}")
     img(src='images/landscape/09-rampe.png', width='273', height='172')
-  .zone10.zone
+  .zone-10.zone(ng-click="zone(10)", ng-class="{active: activeZone == 10}")
     img(src='images/landscape/10-securite.png', width='323', height='179')
-  .zone11.zone
+  .zone-11.zone(ng-click="zone(11)", ng-class="{active: activeZone == 11}")
     img(src='images/landscape/11-usine.png', width='272', height='208')
-  .zone12.zone
+  .zone-12.zone(ng-click="zone(12)", ng-class="{active: activeZone == 12}")
     img(src='images/landscape/12-lycee.png', width='265', height='214')
-  .zone13.zone
+  .zone-13.zone(ng-click="zone(13)", ng-class="{active: activeZone == 13}")
     img(src='images/landscape/13-boulangerie.png', width='251', height='190')
-  .zone14.zone
+  .zone-14.zone(ng-click="zone(14)", ng-class="{active: activeZone == 14}")
     img(src='images/landscape/14-immeuble.png', width='215', height='229')
-  .zone15.zone
+  .zone-15.zone(ng-click="zone(15)", ng-class="{active: activeZone == 15}")
     img(src='images/landscape/15-foret.png', width='671', height='245')

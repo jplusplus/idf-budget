@@ -5,15 +5,15 @@
     right:0px;
     height:560px;
     z-index:$zindex-landscape;
-    overflow:auto;
+    overflow:hidden;
 
     .clouds {
         position:absolute;
         left:0px;
         top:0px;
         height:168px;
-        width:1870px;
-        background:url("../images/landscape/nuages.png") no-repeat;
+        width:4095px;
+        background:url("../images/landscape/nuages.png") repeat-x;
         z-index:$zindex-landscape + 10;
     }
 
@@ -45,13 +45,13 @@
             display:block;
         }
 
-        &:hover{
+        &:hover, &.active {
             @include opacity(1);
         }
     }
 
 
-    .zone1 {
+    .zone-1 {
         left:355px;
         top:91px;
         z-index:$zindex-landscape+100;
@@ -60,7 +60,7 @@
         opacity:0;
     }
 
-    .zone2{
+    .zone-2{
         left:628px;
         top:86px;
         z-index:$zindex-landscape+101;
@@ -69,7 +69,7 @@
         opacity:0;
     }
 
-    .zone3{
+    .zone-3{
         left:896px;
         top:56px;
         z-index:$zindex-landscape+103;
@@ -78,7 +78,7 @@
         opacity:0;
     }
 
-    .zone4{
+    .zone-4{
         left:1048px;
         top:90px;
         z-index:$zindex-landscape+104;
@@ -87,7 +87,7 @@
         opacity:0;
     }
 
-    .zone5{
+    .zone-5{
         left:1479px;
         top:0px;
         z-index:$zindex-landscape+105;
@@ -96,7 +96,7 @@
         opacity:0;
     }
 
-    .zone6{
+    .zone-6{
         left:1562px;
         top:51px;
         z-index:$zindex-landscape+100;
@@ -105,7 +105,7 @@
         opacity:0;
     }
 
-    .zone7{
+    .zone-7{
         left:1718px;
         top:68px;
         z-index:$zindex-landscape+100;
@@ -114,7 +114,7 @@
         opacity:0;
     }
 
-    .zone8{
+    .zone-8{
         left:2112px;
         top:62px;
         z-index:$zindex-landscape+107;
@@ -123,7 +123,7 @@
         opacity:0;
     }
 
-    .zone9{
+    .zone-9{
         left:2383px;
         top:118px;
         z-index:$zindex-landscape+100;
@@ -133,7 +133,7 @@
     }
 
 
-    .zone10{
+    .zone-10{
         left:2550px;
         top:115px;
         z-index:$zindex-landscape+110;
@@ -143,7 +143,7 @@
     }
 
 
-    .zone11{
+    .zone-11{
         left:2766px;
         top:72px;
         z-index:$zindex-landscape+110;
@@ -152,7 +152,7 @@
         opacity:0;
     }
 
-    .zone12{
+    .zone-12{
         left:2966px;
         top:64px;
         z-index:$zindex-landscape+112;
@@ -161,7 +161,7 @@
         opacity:0;
     }
 
-    .zone13{
+    .zone-13{
         left:3114px;
         top:95px;
         z-index:$zindex-landscape+100;
@@ -170,7 +170,7 @@
         opacity:0;
     }
 
-    .zone14{
+    .zone-14{
         left:3277px;
         top:48px;
         z-index:$zindex-landscape+115;
@@ -179,7 +179,7 @@
         opacity:0;
     }
 
-    .zone15{
+    .zone-15{
         left:3424px;
         top:62px;
         z-index:$zindex-landscape+116;
