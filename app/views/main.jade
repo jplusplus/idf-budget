@@ -1,3 +1,7 @@
+//- Navigation buttons
+.nav
+    a.previous(ng-click="activeZone = activeZone - 1", ng-show="activeZone > 1")
+    a.next(ng-click="activeZone  = activeZone + 1", ng-show="activeZone < 15")
 //- Landscape part that move behind everything
 include landscape.jade
 
@@ -7,6 +11,8 @@ include landscape.jade
     .big-one
     .small-one(ng-click="to('home')")
 
+//- An overlay only visible on the home screen
+.home-overlay
 
 //- Introduction to understand the app
 .workspace.workspace-home.text-center
@@ -20,6 +26,24 @@ include landscape.jade
 
 //- Dynamic part that show the details of every zone
 .workspace.workspace-detail
+    h2.text-center(ng-style="{color: detail.color1}") {{detail.name}}
+    .row
+        .col-xs-4
+            img(ng-src="./images/charts/{{activeZone}}.png").pull-right         
+            h3 Budget&nbsp;: {{detail.budget}} M€
+            div(ng-style="{color: detail.color1}")
+                .color-inherit
+                    h4 Investissement
+                    | {{detail.investissement}} millions €  
+            div(ng-style="{color: detail.color2}")
+                .color-inherit
+                    h4 Fonctionnement
+                    | {{detail.fonctionnement}} millions €  
+        .col-xs-4
+            h3 Axes forts 
+            p {{detail.axes}}
+        .col-xs-4        
+            h3 Exemples 
     p.text-center.bt-out
         a.bt.bt-global(ng-click="to('global')")
             | Budget global

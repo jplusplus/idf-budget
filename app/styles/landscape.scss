@@ -38,6 +38,7 @@
     }
 
     .zone {
+        cursor: pointer;
         position:absolute;
         @include opacity(0);
 
@@ -45,7 +46,7 @@
             display:block;
         }
 
-        &:hover, &.active {
+        .detail &:hover, .detail &.active {
             @include opacity(1);
         }
     }
@@ -187,5 +188,4 @@
         height:245px;
         opacity:0;
     }
-
 }

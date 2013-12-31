@@ -26,9 +26,9 @@ angular.module('idfBudgetApp')
         wp: angular.element scope.wrapper
         # Velocity of the elements
         bgVelocity: 0.3
-        fgVelocity: -0.9
+        fgVelocity: -0.8
         # Scroll duration
-        scrollDuration: scope.scrollDuration or 300
+        scrollDuration: scope.scrollDuration or 600
       # We specified a wrapper referencial element
       if conf.wp
         # Wrap an element arround everything

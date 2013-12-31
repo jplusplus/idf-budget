@@ -1,0 +1,16 @@
+id,picture,color1,color2,name,budget,investissement,fonctionnement,part,axes
+1,pilotis,#40636b,#6a99a9,Actions internationales et européennes,"8,8","2,7","6,1","0,2","Expertise sur la croissance urbaine avec pays ne relevant plus de l'aide publique au développemet, solidarité avec les autres."
+6,conseil-regional,#b27f5d,#d19b7d,Administration régionale,"73,4","7,7","65,7","1,6","Charges de fonctionnement en baisse de 2,7% en un an et dépenses de communication de 4% "
+7,nouvel-amenagement,#a56434,#cc7236,Aménagement,"147,3","119,5","27,8","3,2",An I de la mise en œuvre du Schéma directeur régional d'aménagement 
+3,cinema,#245f7f,#5b90a3,Culture,"95,6","33,0","62,6","2,1","Emploi des artistes et du monde culturel, aides aux musiqes actuelles et aux fabriques de culture."
+11,usine,#5e6e72,#748589,"Développement économique, innovation, tourisme","234,6","165,6",69,"5,1","Transition écologique et sociale,  numérique, entreprises en difficulté, quartiers."
+4,hopital,#507568,#6aa08d,Développement social et santé,"256,6","69,0","187,6","5,6","Meilleur accès aux soins, protection de la santé, effort sur les formations sanitaires et sociales."
+12,lycee,#b57e47,#d18f59,Enseignement secondaire ,"655,1","408,0","247,1","14,2","Rénovation des bâtiments, numérique éducatif, décrochage scolaire, mobilité internationale."
+8,universite,#a3522f,#cc6440,Enseignement supérieur et recherche,"134,6","102,0","32,6","2,9","Logements sociaux pour étudiants, Très haut débit, soutien à l'empoi scientifique."
+15,foret,#9b9e12,#bcbc1b,Environnement,"140,3","105,1","35,2","3,0","Transition énergétique, politique agricole ambitieuse."
+13,boulangerie,#ad4944,#e55f51,"Formation professionnelle, apprentissage et emploi","728,2","37,4","690,8","15,8","Formation tout au long de la vie, service public de l'orientation, soutien aux publics les plus en difficulté sur le marché du travail."
+14,immeuble,#cc5d1f,#ef6926,Logement,"174,1","173,0","1,1","3,8","Construction de logements sociaux et très sociaux, 4000 logements étudiants par an, lutte contre la précarité énergétique."
+5,tour,#597987,#779faa,Politique de la ville et renouvellement urbain,87,"78,0",9,"1,9","2e programme national de renouvellement urbain, nouvelle géographie prioritaire."
+10,securite,#32664c,#4a8467,Sécurité,"28,7","26,0","2,7","0,6","Sécurisation des lycées, de bases de plein air et de loisirs, des transports en commun."
+9,rampe,#a3553c,#cf7857,Sports et loisirs ,"60,4","51,5","8,9","1,3","Equipements sportifs structurants, développements des terrains synthétiques, entretien des bases de loisirs, rénovation des piscines."
+2,gare,#aa5129,#dd6940,Transports,1779,"995,0",784,"38,6",40 chantiers en phase de travaux ou en passe de l'être.

@@ -2,7 +2,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 // Stack settings
 $zindex-landscape: 1000;
 $zindex-workspace: $zindex-landscape+1000;
-$zindex-logo: $zindex-workspace+1000;
+$zindex-nav      : $zindex-workspace+1000;
+$zindex-logo     : $zindex-nav+1000;
 
 @import 'variables.scss';
 @import 'sass-bootstrap/lib/bootstrap';
@@ -11,7 +12,29 @@ $zindex-logo: $zindex-workspace+1000;
 
 html body {
     overflow:hidden;
-    background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;
+
+    .main {
+        background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;        
+    }
+
+    h2, h3 {
+        text-transform: uppercase;
+        font-weight:bold;
+    }
+
+    h3 {
+        margin-top:12px;
+    }
+
+    h4 {
+        font-weight:bold;
+        margin-bottom:0;
+    }
+
+    .color-inherit {        
+        color:inherit;
+    }
+
 }
 
 .bt {
@@ -80,6 +103,59 @@ html body {
 
 }
 
+.nav {
+    z-index:$zindex-nav;
+    position:absolute;
+    top:190px;
+    left:10px;
+    right:10px;
+    display:none;
+
+    .detail & {
+        display:block;
+    }
+
+    a {
+        display: block;
+        width:77px;
+        height:77px;   
+        margin:10px;
+
+        position:absolute;
+        top:0;
+        
+        &:hover {
+            background-position: 0 bottom;
+        }
+
+        &.previous {
+            left:0;
+            background-image:url("../images/ui/previous.png");
+        }
+
+        &.next {
+            right:0;
+            background-image:url("../images/ui/next.png");
+        }
+    }
+}
+
+.home-overlay {
+    z-index:$zindex-workspace - 10;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:black;    
+    display:none;
+    @include opacity(0.2);
+
+    .home & {
+        display:block;
+    }
+}
+
 .workspace {
     z-index:$zindex-workspace;
     position:absolute;
@@ -88,7 +164,7 @@ html body {
     margin-left:-1px*920px/2px;
     background:no-repeat center top;
     width:920px;
-    padding-top:30px + 40px;
+    padding:10px 30px;
     $trans:left 0.6s, top 0.6s;
     @include transition($trans);
 
@@ -103,9 +179,10 @@ html body {
     &.workspace-home {
         background-image:url("../images/ui/cartouche_home.png");
         height:294px;
-        left:-50%;
+        left:150%;
         font-weight: 600;
         font-size:17px;
+        padding-top:30px + 40px;
         .home & {
             left:50%;
         }
@@ -114,9 +191,19 @@ html body {
     &.workspace-detail {
         background-image:url("../images/ui/cartouche_detail.png");
         height:240px;
-        left:150%;
+        left:-50%;
+        position:relative;
+
         .detail & {
             left:50%;
+        }
+
+        &:before {
+            position:absolute;            
+            top:-13px;
+            left:50%;
+            margin-left:-17px;
+            content:url("../images/ui/triangle.png");
         }
     }
 
