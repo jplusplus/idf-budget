@@ -16,8 +16,9 @@ angular.module('idfBudgetApp')
         element.scrollTo selector, 
           duration: conf.scrollDuration
           # Center the scroll
-          offset: -1 * ( $(window).width()/2 - $(selector).outerWidth()/2 )
-
+          offset: -1 * ( frame.width()/2 - $(selector).outerWidth()/2 )
+      # Parent frame
+      frame = element.parents(".main")
       conf =
         # Targets elements of the landscape
         bg: angular.element scope.background or ".background"

@@ -5,11 +5,15 @@
 @import 'landscape.scss';
 
 html body {
-    overflow:hidden;
 
     .main {
-        min-width:960px;
-        min-height:560px;
+        overflow:hidden;
+        position:absolute;
+        left:50%;
+        top:0;
+        width:960px;
+        height:560px;
+        margin-left:-480px;
         background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;        
     }
 
@@ -136,10 +140,10 @@ html body {
 .home-overlay {
     z-index:$zindex-workspace - 10;
     position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+    top:-100%;
+    left:-100%;
+    bottom:-100%;
+    right:-100%;
     background:black;    
     display:none;
     @include opacity(0.2);

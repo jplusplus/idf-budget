@@ -1,7 +1,9 @@
-angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http) ->
+angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http, $rootElement) ->
     # Constants
     DEFAULT_ZONE = 1
     HOME_ZONE    = 8
+    # Parent frame
+    FRAME        = $rootElement.find(".main")
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods outside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────   
@@ -28,8 +30,8 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http)
             when 'home' then $scope.zone(HOME_ZONE)
         switch $scope.screen 
             # Scroll down to global
-            when 'global' then $(window).scrollTo(top: 250, left:0, 600)
-            else $(window).scrollTo(top: 0, left:0, 600)
+            when 'global' then FRAME.scrollTo(top: 250, left:0, 600)
+            else FRAME.scrollTo(top: 0, left:0, 600)        
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
