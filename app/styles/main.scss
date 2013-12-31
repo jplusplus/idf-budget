@@ -216,3 +216,10 @@ html body {
         }
     }
 }
+
+footer {
+    z-index:$zindex-footer;
+    position:fixed;
+    bottom:10px;
+    left:20px;
+}
