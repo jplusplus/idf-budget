@@ -6,22 +6,22 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     FRAME        = $rootElement.find(".main")
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods outside the scope
-    # ──────────────────────────────────────────────────────────────────────────────────────────────   
+    # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Function that transforms raw data into a collection of objects
-    csvToObject = (raw)->        
-        # Parse CSV file         
+    csvToObject = (raw)->
+        # Parse CSV file
         rows = CSV.parse(raw)
-        if rows.length            
+        if rows.length
             # Remove the first line
             base = rows.shift()
             # Transform each row to an object
-            rows = _.map rows, (r)-> _.object(base, r)        
+            rows = _.map rows, (r)-> _.object(base, r)
     # Refresh active detail data
-    refreshDetail = ->        
+    refreshDetail = ->
         # Find the data related to this zone
         $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
     # Read location argument to update the screen
-    readLocation = ->        
+    readLocation = ->
         # Are we coming from the homepage?
         wasHome = $scope.screen is 'home'
         # Read the new name
@@ -31,18 +31,18 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         # Scroll down to global
         if $scope.screen is 'global' then FRAME.scrollTo(top: 250, left:0, 600)
         # Or reset the scroll
-        else FRAME.scrollTo(0, 600)        
+        else FRAME.scrollTo(0, 600)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Update the current screen
     $scope.to = (screen='home')->
-        $location.search "screen", screen       
+        $location.search "screen", screen
     # Function to set the parent model value
-    $scope.zone = (val=false)=>        
+    $scope.zone = (val=false)=>
         # Only if we received a model attrbiute
         $scope.activeZone = val if val
-        $scope.activeZone        
+        $scope.activeZone
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Scope attributes
     # ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -53,16 +53,20 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     readLocation()
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # XHR data loading
-    # ──────────────────────────────────────────────────────────────────────────────────────────────    
+    # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Get all details
-    $http.get('/data/details.csv').success (raw)->         
+    $http.get('/data/details.csv').success (raw)->
         # Parses and sorts data by id
         $scope.details = _.sortBy csvToObject(raw), (d)-> d.id
         # Then refresh the active detail
-        refreshDetail()        
+        refreshDetail()
+    # Get all exemples
+    $http.get('/data/exemples.csv').success (raw)->
+        # Parses data
+        $scope.exemples = csvToObject(raw)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watchers
-    # ──────────────────────────────────────────────────────────────────────────────────────────────    
+    # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watch for new selected zone
     $scope.$watch "activeZone", refreshDetail
     # Read the location's search to update the scope

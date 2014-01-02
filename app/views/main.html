@@ -35,28 +35,35 @@
       <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
       <div ng-style="{color: detail.color1}">
         <div class="color-inherit">
-          <h4>Investissement</h4>{{detail.investissement}} millions €  
+          <h4>Investissement</h4>{{detail.investissement}} millions €
         </div>
       </div>
       <div ng-style="{color: detail.color2}">
         <div class="color-inherit">
-          <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €  
+          <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
         </div>
       </div>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-4 col-border">
       <h3>Axes forts </h3>
       <p>{{detail.axes}}</p>
     </div>
-    <div class="col-xs-4">       
+    <div class="col-xs-4">
       <h3>Exemples </h3>
+      <ul>
+        <li ng-repeat="exemple in exemples | filter:{theme: detail.name}">
+          <a ng-href="{{exemple.url}}">
+            {{exemple.label}}
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   <p class="text-center bt-out"><a ng-click="to('global')" class="bt bt-global">Budget global</a></p>
 </div>
 
 <!-- Global budget-->
-<div class="workspace workspace-global text-center">   
+<div class="workspace workspace-global text-center">
   <h2 class="top-50 bottom-30">Budget global</h2><img src="./images/charts/global.png"/>
   <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
 </div>
