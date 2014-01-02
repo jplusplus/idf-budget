@@ -51,6 +51,12 @@ html body {
             padding-left:0;
         }
     }
+
+    .label {
+        font-size: $font-size-base * 0.9;
+        line-height: $font-size-base * 0.9;
+        padding:0 3px;
+    }
 }
 
 .bt {
@@ -268,16 +274,35 @@ html body {
             z-index:20;
         }
 
+
+        &.show-others {
+            .list-depenses.with-absolute {
+                @include opacity(0.1);
+            }
+
+            .others {
+                right:70px;
+                @include opacity(1);
+            }
+        }
+
         .list-recettes,
         .list-depenses {
-            position:absolute;
             width:273px;
             font-size:12px;
             line-height:1.2em;
+            @include opacity(1);
+            @include transition(opacity 600ms);
+
+            &.with-absolute {
+                position:absolute;
+            }
 
             li {
+                padding-top:2px;
+                padding-bottom:2px;
+                margin-bottom:4px;
                 position:relative;
-                margin-bottom:6px;
                 z-index:30;
                 overflow: hidden;
 
@@ -321,6 +346,28 @@ html body {
                     color:$depenses-color;
                     padding-left:15px;
                 }
+            }
+        }
+
+        .others {
+            background:#fff;
+            position:absolute;
+            right:-300px;
+            bottom:30px;
+            z-index:40;
+            width:220px;
+            padding:10px;
+            border-radius: 3px;
+            @include opacity(0);
+            @include transition(600ms);
+            @include box-shadow(0 0 6px 0 #dedede);
+
+            h5 {
+                color:$depenses-color;
+            }
+
+            .list-depenses {
+                width:auto;
             }
         }
     }

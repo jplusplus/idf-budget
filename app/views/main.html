@@ -63,11 +63,11 @@
 </div>
 
 <!-- Global budget-->
-<div class="workspace workspace-global">
+<div class="workspace workspace-global" ng-class="{'show-others': show_others}">
   <h2 class="top-50 bottom-30 text-center">Budget global</h2>
-  <img src="./images/charts/global.png" class="pie" />
 
-  <ul class="text-right list-unstyled list-recettes">
+  <img src="./images/charts/global.png" class="pie" />
+  <ul class="text-right list-unstyled list-recettes with-absolute">
     <li ng-repeat="item in budget | filter:{type: 'recettes', visible: 1}">
       {{item.label}}
       <strong  bound="{{item.to}}" parent=".workspace" step="15" offset="270">
@@ -76,14 +76,32 @@
     </li>
   </ul>
 
-  <ul class="list-unstyled list-depenses">
+  <ul class="list-unstyled list-depenses with-absolute">
     <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 1}">
       <strong  bound="{{item.to}}" parent=".workspace" step="15">
         {{item.part}}%
       </strong>
       {{item.label}}
     </li>
+    <li ng-mouseenter="show_others = true" class="show-others">
+      <strong>
+        5.7%
+      </strong>
+      <span class="label label-warning">Autres</span>
+    </li>
   </ul>
+
+  <div class="others" ng-mouseleave="show_others = false">
+    <h5>Autres dépenses</h5>
+    <ul class="list-unstyled list-depenses">
+      <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 0}">
+        <strong>
+          {{item.part}}%
+        </strong>
+        {{item.label}}
+      </li>
+    </ul>
+  </div>
 
   <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
 </div>

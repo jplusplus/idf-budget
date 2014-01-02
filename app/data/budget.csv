@@ -5,7 +5,6 @@ recettes,Fiscalité directe,"903,4",19,1,321;283
 recettes,Recettes diverses,"735,8","15,5",1,346;351
 recettes,Emprunt,"632,7","13,3",1,391;391
 recettes,Dotations,"431,4","9,1",1,437;406
-recettes,TOTAL,4751,100,0,
 depenses,Transports,1779,"38,6",1,541;161
 depenses,"Formation professionnelle, Apprentissage et emploi","728,2","15,8",1,601;257
 depenses,Enseignement secondaire ,"655,1","14,2",1,595;319
@@ -22,4 +21,3 @@ depenses,Sports et loisirs ,"60,4","1,3",0,
 depenses,Sécurité,"28,7","0,6",0,
 depenses,Actions internationales et européennes,"8,8","0,2",0,
 depenses,Citoyenneté,"5,95","0,1",0,
-depenses,TOTAL,"4609,65",100,0,
