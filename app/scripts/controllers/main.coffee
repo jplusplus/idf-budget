@@ -36,8 +36,7 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Update the current screen
-    $scope.to = (screen='home')->
-        $location.search "screen", screen
+    $scope.to = (screen='home')-> $location.search "screen", screen
     # Function to set the parent model value
     $scope.zone = (val=false)=>
         # Only if we received a model attrbiute
@@ -61,14 +60,9 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         # Then refresh the active detail
         refreshDetail()
     # Get all exemples
-    $http.get('/data/exemples.csv').success (raw)->
-        # Parses data
-        $scope.exemples = csvToObject(raw)
+    $http.get('/data/exemples.csv').success (raw)-> $scope.exemples = csvToObject(raw)
     # Get budget composition
-    $http.get('/data/budget.csv').success (raw)->
-        # Parses data
-        $scope.budget = csvToObject(raw)
-        console.log $scope.budget
+    $http.get('/data/budget.csv').success (raw)-> $scope.budget = csvToObject(raw)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watchers
     # ──────────────────────────────────────────────────────────────────────────────────────────────

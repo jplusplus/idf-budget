@@ -70,13 +70,17 @@
   <ul class="text-right list-unstyled list-recettes">
     <li ng-repeat="item in budget | filter:{type: 'recettes', visible: 1}">
       {{item.label}}
-      <strong>{{item.part}}%</strong>
+      <strong  bound="{{item.to}}" parent=".workspace" step="15" offset="270">
+        {{item.part}}%
+      </strong>
     </li>
   </ul>
 
   <ul class="list-unstyled list-depenses">
     <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 1}">
-      <strong>{{item.part}}%</strong>
+      <strong  bound="{{item.to}}" parent=".workspace" step="15">
+        {{item.part}}%
+      </strong>
       {{item.label}}
     </li>
   </ul>
