@@ -15,6 +15,7 @@ html body {
         height:560px;
         margin-left:(-960px/2);
         background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;
+        @include transform-origin("top center");
 
         .scrollable {
             position:absolute;

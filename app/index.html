@@ -54,11 +54,16 @@
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <!-- endbower-->
+    <!-- Not added automaticly by bower-install -->
+    <script src="bower_components/responsiveiframe/src/jquery.responsiveiframe.js"></script>
     <!-- endbuild-->
 
 
     <!-- build:js({.tmp,app}) scripts/scripts.js-->
     <script>
+        // Allows responsive iframe
+        var ir = responsiveIframe();
+        ir.allowResponsiveEmbedding();
         // Remove tap delay on touch screen
         window.addEventListener('load', function() {
             if(window.FastClick != undefined) FastClick.attach(document.body);

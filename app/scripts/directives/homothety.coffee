@@ -9,7 +9,9 @@ angular.module('idfBudgetApp').directive 'homothety', ($window)->
             scale = Math.min 1, wdw.width() / maxWidth
             # Allow the parent iframe to fits with this element
             body.css "min-height", element.height() * scale
-            element.css "transform", "scale(#{scale})"
+            element.css
+                "transform": "scale(#{scale})"
+                "transform-origin": "center top"
             scale
         # Use initial with as max width
         maxWidth = element.outerWidth()
