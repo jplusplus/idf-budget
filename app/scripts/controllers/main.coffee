@@ -64,6 +64,11 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     $http.get('/data/exemples.csv').success (raw)->
         # Parses data
         $scope.exemples = csvToObject(raw)
+    # Get budget composition
+    $http.get('/data/budget.csv').success (raw)->
+        # Parses data
+        $scope.budget = csvToObject(raw)
+        console.log $scope.budget
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watchers
     # ──────────────────────────────────────────────────────────────────────────────────────────────

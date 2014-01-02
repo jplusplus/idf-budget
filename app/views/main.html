@@ -63,7 +63,23 @@
 </div>
 
 <!-- Global budget-->
-<div class="workspace workspace-global text-center">
-  <h2 class="top-50 bottom-30">Budget global</h2><img src="./images/charts/global.png"/>
+<div class="workspace workspace-global">
+  <h2 class="top-50 bottom-30 text-center">Budget global</h2>
+  <img src="./images/charts/global.png" class="pie" />
+
+  <ul class="text-right list-unstyled list-recettes">
+    <li ng-repeat="item in budget | filter:{type: 'recettes', visible: 1}">
+      {{item.label}}
+      <strong>{{item.part}}%</strong>
+    </li>
+  </ul>
+
+  <ul class="list-unstyled list-depenses">
+    <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 1}">
+      <strong>{{item.part}}%</strong>
+      {{item.label}}
+    </li>
+  </ul>
+
   <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
 </div>

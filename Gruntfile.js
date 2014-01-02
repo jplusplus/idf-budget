@@ -47,6 +47,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
+          '<%= yeoman.app %>/data/{,*/}*.csv',
           '.tmp/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/{,*/}*.html',
@@ -217,7 +218,7 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.dist %>'
       }
     },
-    
+
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],

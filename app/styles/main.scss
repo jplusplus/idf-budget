@@ -13,7 +13,7 @@ html body {
         top:0;
         width:960px;
         height:560px;
-        margin-left:-480px;
+        margin-left:(-960px/2);
         background:url("../images/landscape/ciel.png") repeat-x top center $body-bg;
     }
 
@@ -44,6 +44,11 @@ html body {
         li {
             background: url("../images/ui/bullet.png") no-repeat 0 10px;
             padding-left:8px;
+        }
+
+        &.list-unstyled li {
+            background:none;
+            padding-left:0;
         }
     }
 }
@@ -237,6 +242,10 @@ html body {
     }
 
     &.workspace-global {
+        $indicator-width:60px;
+        $recettes-color: #19d898;
+        $depenses-color: #f49703;
+
         background-image:url("../images/ui/cartouche_global.png");
         height:478px;
         left:50%;
@@ -244,6 +253,64 @@ html body {
 
         .global & {
             top:300px - 30px;
+        }
+
+        .pie {
+            position:absolute;
+            left:50%;
+            top:120px;
+            width:371px;
+            margin-left: (-371px/2);
+        }
+
+        .list-recettes,
+        .list-depenses {
+            position:absolute;
+            width:273px;
+            font-size:12px;
+            line-height:1.2em;
+
+            li {
+                position:relative;
+                margin-bottom:6px;
+
+                strong {
+                    background:url("../images/ui/point.png") no-repeat center left;
+                    width:$indicator-width;
+                    display:block;
+                    position:absolute;
+                    top:50%;
+                    bottom:0;
+                    height:20px;
+                    line-height:20px;
+                    margin-top:(-20px/2);
+                }
+            }
+        }
+
+        .list-recettes {
+            top:200px;
+            left:10px;
+            padding-right:$indicator-width;
+
+            li strong {
+                left:100%;
+                color:$recettes-color;
+                background-position: center right;
+                padding-right:15px;
+            }
+        }
+
+        .list-depenses {
+            top:142px;
+            right:10px;
+            padding-left:$indicator-width;
+
+            li strong {
+                right:100%;
+                color:$depenses-color;
+                padding-left:15px;
+            }
         }
     }
 }
@@ -256,6 +323,6 @@ footer {
     top:520px;
     width:960px;
     height:560px;
-    margin-left:-480px;
+    margin-left:(-960px/2);
     padding:0 20px;
 }
