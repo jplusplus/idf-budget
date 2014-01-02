@@ -3,7 +3,7 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     DEFAULT_ZONE = 1
     HOME_ZONE    = 8
     # Parent frame
-    FRAME        = $rootElement.find(".main")
+    FRAME        = $rootElement.find(".scrollable")
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods outside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────

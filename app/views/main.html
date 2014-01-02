@@ -1,11 +1,3 @@
-<!-- Navigation buttons-->
-<div class="nav">
-  <a ng-click="activeZone = activeZone - 1" ng-show="activeZone &gt; 1" class="previous"></a>
-  <a ng-click="activeZone  = activeZone + 1" ng-show="activeZone &lt; 15" class="next"></a>
-</div>
-
-<!-- Landscape part that move behind everything-->
-<div  ng-include="'views/landscape.html'"></div>
 
 <!-- Logo at the top of the application-->
 <div class="logo">
@@ -17,91 +9,106 @@
 <!-- An overlay only visible on the home screen-->
 <div class="home-overlay"></div>
 
-<!-- Introduction to understand the app-->
-<div class="workspace workspace-home text-center">
-  <p>
-    Les conditions de vie des Francilien(ne)s<br />
-    sont au cœur du budget 2914 de l'Île-de-France.<br />
-    Naviguez dans les 15 grands domaines d'investissement de la Région.
-  </p>
-  <p><a ng-click="to('detail')" class="bt bt-commencez">Commencez l'experience</a></p>
-</div>
-
-<!-- Dynamic part that show the details of every zone-->
-<div class="workspace workspace-detail">
-  <h2 ng-style="{color: detail.color1}" class="text-center">{{detail.name}}</h2>
-  <div class="row">
-    <div class="col-xs-4"><img ng-src="./images/charts/{{activeZone}}.png" class="pull-right"/>
-      <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
-      <div ng-style="{color: detail.color1}">
-        <div class="color-inherit">
-          <h4>Investissement</h4>{{detail.investissement}} millions €
-        </div>
-      </div>
-      <div ng-style="{color: detail.color2}">
-        <div class="color-inherit">
-          <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-4 col-border">
-      <h3>Axes forts </h3>
-      <p>{{detail.axes}}</p>
-    </div>
-    <div class="col-xs-4">
-      <h3>Exemples </h3>
-      <ul>
-        <li ng-repeat="exemple in exemples | filter:{theme: detail.name}">
-          <a ng-href="{{exemple.url}}">
-            {{exemple.label}}
-          </a>
-        </li>
-      </ul>
-    </div>
+<div class="scrollable">
+  <!-- Navigation buttons-->
+  <div class="nav">
+    <a ng-click="activeZone = activeZone - 1" ng-show="activeZone &gt; 1" class="previous"></a>
+    <a ng-click="activeZone  = activeZone + 1" ng-show="activeZone &lt; 15" class="next"></a>
   </div>
-  <p class="text-center bt-out"><a ng-click="to('global')" class="bt bt-global">Budget global</a></p>
-</div>
 
-<!-- Global budget-->
-<div class="workspace workspace-global" ng-class="{'show-others': show_others}">
-  <h2 class="top-50 bottom-30 text-center">Budget global</h2>
+  <!-- Landscape part that move behind everything-->
+  <div  ng-include="'views/landscape.html'"></div>
 
-  <img src="./images/charts/global.png" class="pie" />
-  <ul class="text-right list-unstyled list-recettes with-absolute">
-    <li ng-repeat="item in budget | filter:{type: 'recettes', visible: 1}">
-      {{item.label}}
-      <strong  bound="{{item.to}}" parent=".workspace" step="15" offset="270">
-        {{item.part}}%
-      </strong>
-    </li>
-  </ul>
+  <!-- Introduction to understand the app-->
+  <div class="workspace workspace-home text-center">
+    <p>
+      Les conditions de vie des Francilien(ne)s<br />
+      sont au cœur du budget 2914 de l'Île-de-France.<br />
+      Naviguez dans les 15 grands domaines d'investissement de la Région.
+    </p>
+    <p><a ng-click="to('detail')" class="bt bt-commencez">Commencez l'experience</a></p>
+  </div>
 
-  <ul class="list-unstyled list-depenses with-absolute">
-    <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 1}">
-      <strong  bound="{{item.to}}" parent=".workspace" step="15">
-        {{item.part}}%
-      </strong>
-      {{item.label}}
-    </li>
-    <li ng-mouseenter="show_others = true" class="show-others">
-      <strong>
-        5.7%
-      </strong>
-      <span class="label label-warning">Autres</span>
-    </li>
-  </ul>
+  <!-- Dynamic part that show the details of every zone-->
+  <div class="workspace workspace-detail">
+    <h2 ng-style="{color: detail.color1}" class="text-center">{{detail.name}}</h2>
+    <div class="row">
+      <div class="col-xs-4"><img ng-src="./images/charts/{{activeZone}}.png" class="pull-right"/>
+        <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
+        <div ng-style="{color: detail.color1}">
+          <div class="color-inherit">
+            <h4>Investissement</h4>{{detail.investissement}} millions €
+          </div>
+        </div>
+        <div ng-style="{color: detail.color2}">
+          <div class="color-inherit">
+            <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 col-border">
+        <h3>Axes forts </h3>
+        <p>{{detail.axes}}</p>
+      </div>
+      <div class="col-xs-4">
+        <h3>Exemples </h3>
+        <ul>
+          <li ng-repeat="exemple in exemples | filter:{theme: detail.name}">
+            <a ng-href="{{exemple.url}}">
+              {{exemple.label}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center bt-out"><a ng-click="to('global')" class="bt bt-global">Budget global</a></p>
+  </div>
 
-  <div class="others" ng-mouseleave="show_others = false">
-    <h5>Autres dépenses</h5>
-    <ul class="list-unstyled list-depenses">
-      <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 0}">
-        <strong>
+  <!-- Global budget-->
+  <div class="workspace workspace-global" ng-class="{'show-others': show_others}">
+    <h2 class="top-50 bottom-30 text-center">Budget global</h2>
+
+    <img src="./images/charts/global.png" class="pie" />
+    <ul class="text-right list-unstyled list-recettes with-absolute">
+      <li ng-repeat="item in budget | filter:{type: 'recettes', visible: 1}">
+        {{item.label}}
+        <strong  bound="{{item.to}}" parent=".workspace" step="15" offset="270">
+          {{item.part}}%
+        </strong>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled list-depenses with-absolute">
+      <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 1}">
+        <strong  bound="{{item.to}}" parent=".workspace" step="15">
           {{item.part}}%
         </strong>
         {{item.label}}
       </li>
+      <li ng-mouseenter="show_others = true" class="show-others">
+        <strong>
+          5.7%
+        </strong>
+        <span class="label label-warning">Autres</span>
+      </li>
     </ul>
-  </div>
 
-  <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
+    <div class="others" ng-mouseleave="show_others = false">
+      <h5>Autres dépenses</h5>
+      <ul class="list-unstyled list-depenses">
+        <li ng-repeat="item in budget | filter:{type: 'depenses', visible: 0}">
+          <strong>
+            {{item.part}}%
+          </strong>
+          {{item.label}}
+        </li>
+      </ul>
+    </div>
+
+    <p class="text-center bt-out"><a ng-click="to('detail')" class="bt bt-detail">Budget par secteur</a></p>
+  </div>
 </div>
+
+<footer>
+  <img src="./images/ui/logo_wedodata.png" class="wdd" />
+</footer>
