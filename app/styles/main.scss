@@ -293,7 +293,7 @@ html body {
 
             .others {
                 right:70px;
-                @include opacity(1);
+                opacity:1;
             }
         }
 
@@ -369,7 +369,7 @@ html body {
             width:220px;
             padding:10px;
             border-radius: 3px;
-            @include opacity(0);
+            opacity:0;
             @include transition(600ms);
             @include box-shadow(0 0 6px 0 #dedede);
 
