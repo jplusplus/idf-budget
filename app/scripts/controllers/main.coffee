@@ -26,6 +26,8 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         wasHome = $scope.screen is 'home'
         # Read the new name
         $scope.screen = $location.search().screen or 'home'
+        # Go back to the center of the homepage
+        if $scope.screen is 'home' then $scope.zone(HOME_ZONE)
         # Go to the begining of the landscape when we switch to detail
         if $scope.screen is 'detail' and wasHome then $scope.zone(DEFAULT_ZONE)
         # Scroll down to global
