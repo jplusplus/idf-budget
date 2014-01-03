@@ -279,6 +279,12 @@ html body {
             width:371px;
             margin-left: (-371px/2);
             z-index:10;
+            opacity:1;
+            @include transition(opacity 600ms);
+
+            &.pie-others {
+                opacity:0;
+            }
         }
 
         .js-bound-draw {
@@ -289,6 +295,13 @@ html body {
         &.show-others {
             .list-depenses.with-absolute {
                 @include opacity(0.1);
+            }
+
+            .pie {
+                opacity:0;
+                &.pie-others {
+                    opacity:1;
+                }
             }
 
             .others {

@@ -53,18 +53,17 @@ angular.module('idfBudgetApp').directive 'bound', () ->
         # We append an SVG to the parent
         vis = d3.select(parent[0])
                     .append("svg")
-                        .attr("class", "js-bound-draw hidden")
+                        .attr("class", "js-bound-draw ")
                         .style("position", "absolute")
+                        # This new svg has the same size than the parent
                         .style("top", 0)
                         .style("left", 0)
-                        # This new svg has the same size than the parent
-                        .attr("width", "#{width}px")
-                        .attr("height", "#{height}px")
+                        .style("bottom", 0)
+                        .style("right", 0)
         # Draw the bound inside the svg
         path = vis.append("path")
                     .attr("stroke", "#586063")
                     .attr("stroke-width", 1)
-                    .attr("fill", "none")
         # Show and hide the element
         element.hover ->
             # Draws the point with updated coordonates

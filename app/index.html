@@ -32,10 +32,10 @@
 
     <!--[if lt IE 9]>
         <!-- build:js scripts/ie.js-->
-            <script src='bower_components/es5-shim/es5-shim.js'></script>
-            <script src='bower_components/json3/lib/json3.min.js'></script>
-            <script src="bower_components/r2d3/r2d3.js"></script>
-            <script src="bower_components/raphael/raphael.js"></script>
+            <script charset="utf-8" src='bower_components/es5-shim/es5-shim.js'></script>
+            <script charset="utf-8" src='bower_components/json3/lib/json3.min.js'></script>
+            <script charset="utf-8" src="bower_components/r2d3/r2d3.js"></script>
+            <script charset="utf-8" src="bower_components/raphael/raphael.js"></script>
         <!-- endbuild-->
     <![endif]-->
 
@@ -67,7 +67,7 @@
         var ir = responsiveIframe();
         ir.allowResponsiveEmbedding();
         // Remove tap delay on touch screen
-        window.addEventListener('load', function() {
+        $(document).on('ready', function() {
             if(window.FastClick != undefined) FastClick.attach(document.body);
         }, false);
     </script>
