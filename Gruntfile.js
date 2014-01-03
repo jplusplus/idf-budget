@@ -136,7 +136,7 @@ module.exports = function (grunt) {
       app: {
         html: '<%= yeoman.app %>/index.html',
         ignorePath: '<%= yeoman.app %>/',
-        exclude: ['/raphael/', '/r2d3/']
+        exclude: ['/raphael/', '/r2d3/', '/d3/']
       }
     },
 

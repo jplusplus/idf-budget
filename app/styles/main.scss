@@ -241,7 +241,7 @@ html body {
         height:240px;
         left:-50%;
         position:relative;
-        padding-right:5px;
+        padding-right:10px;
 
         .row {
             padding-top:7px;
@@ -290,6 +290,9 @@ html body {
 
             &.pie-others {
                 opacity:0;
+                .lt-ie9 & {
+                    display:none;
+                }
             }
         }
 
@@ -305,6 +308,14 @@ html body {
 
             .pie {
                 opacity:0;
+
+                .lt-ie9 & {
+                    display:none;
+                    &.pie-others {
+                        display:block;
+                    }
+                }
+
                 &.pie-others {
                     opacity:1;
                 }

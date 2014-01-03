@@ -42,24 +42,31 @@ angular.module('idfBudgetApp').directive 'bound', () ->
             if from.left < to.left and step > 0 then step *= -1
             # Returns the 4 points of the path
             return [
-                { x: from.left, y: from.top }
-                { x: from.left - step, y: from.top }
-                { x: from.left - step, y: to.top }
+                { x: from.left, y: from.top },
+                { x: from.left - step, y: from.top },
+                { x: from.left - step, y: to.top },
                 { x: to.left, y: to.top }
             ]
         # ──────────────────────────────────────────────────────────────────────────────────────────
         # Drawing the bound
         # ──────────────────────────────────────────────────────────────────────────────────────────
+        # We create a div that contains the drawing
+        workspace = $("<div />")
+        workspace.addClass("js-bound-draw")
+                 .css
+                    top:     0
+                    left:    0
+                    right:   0
+                    bottom:  0
+                    position:'absolute'
+        # Append the workspace to its parent
+        parent.append(workspace)
         # We append an SVG to the parent
-        vis = d3.select(parent[0])
+        vis = d3.select(workspace[0])
                     .append("svg")
-                        .attr("class", "js-bound-draw ")
-                        .style("position", "absolute")
-                        .style("top", 0)
-                        .style("left", 0)
                         # This new svg has the same size than the parent
-                        .attr("width", "#{width}px")
-                        .attr("height", "#{height}px")
+                        .attr("width", width)
+                        .attr("height", height)
         # Draw the bound inside the svg
         path = vis.append("path")
                     .attr("stroke", "#586063")
@@ -70,7 +77,7 @@ angular.module('idfBudgetApp').directive 'bound', () ->
             # Draws the point with updated coordonates
             draw()
             # Removes hidden class
-            vis.attr("class", "js-bound-draw")
+            workspace.removeClass("hidden")
         , ->
             # Restores hidden class
-            vis.attr("class", "js-bound-draw hidden")
+            workspace.addClass("hidden")
