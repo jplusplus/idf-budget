@@ -226,6 +226,7 @@ html body {
     &.workspace-home {
         background-image:url("../images/ui/cartouche_home.png");
         height:294px;
+        top:270px;
         left:150%;
         font-weight: 600;
         font-size:17px;
@@ -407,7 +408,7 @@ footer {
 
     position:fixed;
     left:50%;
-    top:520px;
+    top:530px;
     width:960px;
     height:560px;
     margin-left:(-960px/2);
