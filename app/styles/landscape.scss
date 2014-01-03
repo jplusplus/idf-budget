@@ -44,6 +44,14 @@
         z-index:$zindex-landscape + 30;
     }
 
+    .home-center {
+        position:absolute;
+        height:100%;
+        width:40px;
+        left:2050px;
+        top:0;
+    }
+
     .zone {
         cursor: pointer;
         position:absolute;
