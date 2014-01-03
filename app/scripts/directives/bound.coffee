@@ -55,15 +55,16 @@ angular.module('idfBudgetApp').directive 'bound', () ->
                     .append("svg")
                         .attr("class", "js-bound-draw ")
                         .style("position", "absolute")
-                        # This new svg has the same size than the parent
                         .style("top", 0)
                         .style("left", 0)
-                        .style("bottom", 0)
-                        .style("right", 0)
+                        # This new svg has the same size than the parent
+                        .attr("width", "#{width}px")
+                        .attr("height", "#{height}px")
         # Draw the bound inside the svg
         path = vis.append("path")
                     .attr("stroke", "#586063")
                     .attr("stroke-width", 1)
+                    .attr("fill", "none")
         # Show and hide the element
         element.hover ->
             # Draws the point with updated coordonates

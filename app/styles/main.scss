@@ -81,19 +81,19 @@ html body {
     &.bt-commencez {
         width:253px;
         height:37px;
-        background:url("../images/ui/bt_commencez.png") 0 0;
+        background-image:url("../images/ui/bt_commencez.png");
     }
 
     &.bt-detail {
         width:212px;
         height:44px;
-        background:url("../images/ui/bt_detail.png") 0 0;
+        background-image:url("../images/ui/bt_detail.png");
     }
 
     &.bt-global {
         width:179px;
         height:44px;
-        background:url("../images/ui/bt_global.png") 0 0;
+        background-image:url("../images/ui/bt_global.png");
     }
 }
 
