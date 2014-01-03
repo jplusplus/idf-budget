@@ -48,7 +48,12 @@
       </div>
       <div class="col-xs-4 col-border">
         <h3>Axes forts </h3>
-        <p>{{detail.axes}}</p>
+        <p>{{}}</p>
+        <ul>
+          <li ng-repeat="axe in detail.axes.split(',')">
+            {{axe}}
+          </li>
+        </ul>
       </div>
       <div class="col-xs-4">
         <h3>Exemples </h3>

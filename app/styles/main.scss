@@ -257,6 +257,10 @@ html body {
             margin-left:-17px;
             content:url("../images/ui/triangle.png");
         }
+
+        ul li:first-letter {
+            text-transform:uppercase;
+        }
     }
 
     &.workspace-global {
