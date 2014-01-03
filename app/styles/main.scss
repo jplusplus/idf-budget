@@ -192,7 +192,7 @@ html body {
 .workspace {
     z-index:$zindex-workspace;
     position:absolute;
-    top:300px - 30px;
+    top:293px;
     left:50%;
     margin-left:-1px*920px/2px;
     background:no-repeat center top;
@@ -274,7 +274,7 @@ html body {
         top:1000px;
 
         .global & {
-            top:300px - 30px;
+            top:293px;
         }
 
         .pie {
