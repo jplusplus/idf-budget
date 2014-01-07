@@ -303,6 +303,11 @@ module.exports = function (grunt) {
             dest: '<%= yeoman.dist %>',
             src: [
               'data/*',
+              'bower_components/json3/', 
+              'bower_components/es5-shim/', 
+              'bower_components/raphael/', 
+              'bower_components/r2d3/',
+              'bower_components/d3/'
               '{,*/}*.html'
             ]
           }
