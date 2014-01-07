@@ -81,6 +81,7 @@
         .detail &.active img {
             opacity:1;
             display:block;
+            @include scale(1.1);
         }
 
         .name {
