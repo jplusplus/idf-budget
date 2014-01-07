@@ -72,3 +72,19 @@ html body {
 	.padding-80 { padding:80px; }
 	.padding-90 { padding:90px; }
 }
+
+// keyframes mixin
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

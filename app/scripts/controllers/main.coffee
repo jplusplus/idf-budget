@@ -16,8 +16,21 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
             base = rows.shift()
             # Transform each row to an object
             rows = _.map rows, (r)-> _.object(base, r)
+    
+    ephemeralClass = (what=$rootElement, cls='fade', duration=700, callback=->)->
+        what.addClass cls
+        # Remove the class after a short delay
+        setTimeout -> 
+            what.removeClass cls
+            callback()
+            # Refresh the scope
+            $scope.$apply()
+        , 700
+
     # Refresh active detail data
     refreshDetail = ->
+        # Fade animation on .js-title
+        #ephemeralClass $rootElement.find(".js-fade"), 'do-fade', 700, ->
         # Find the data related to this zone
         $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
     # Read location argument to update the screen

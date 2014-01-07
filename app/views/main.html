@@ -31,39 +31,41 @@
 
   <!-- Dynamic part that show the details of every zone-->
   <div class="workspace workspace-detail">
-    <h2 ng-style="{color: detail.color1}" class="text-center">{{detail.name}}</h2>
-    <div class="row">
-      <div class="col-xs-4"><img ng-src="./images/charts/{{activeZone}}.png" class="pull-right"/>
-        <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
-        <div ng-style="{color: detail.color1}">
-          <div class="color-inherit">
-            <h4>Investissement</h4>{{detail.investissement}} millions €
+    <div class="js-fade">
+      <h2 ng-style="{color: detail.color1}" class="text-center">{{detail.name}}</h2>
+      <div class="row">
+        <div class="col-xs-4"><img ng-src="./images/charts/{{activeZone}}.png" class="pull-right"/>
+          <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
+          <div ng-style="{color: detail.color1}">
+            <div class="color-inherit">
+              <h4>Investissement</h4>{{detail.investissement}} millions €
+            </div>
+          </div>
+          <div ng-style="{color: detail.color2}">
+            <div class="color-inherit">
+              <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
+            </div>
           </div>
         </div>
-        <div ng-style="{color: detail.color2}">
-          <div class="color-inherit">
-            <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
-          </div>
+        <div class="col-xs-4 col-border">
+          <h3>Axes forts </h3>
+          <p>{{}}</p>
+          <ul>
+            <li ng-repeat="axe in detail.axes.split(',')">
+              {{axe}}
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="col-xs-4 col-border">
-        <h3>Axes forts </h3>
-        <p>{{}}</p>
-        <ul>
-          <li ng-repeat="axe in detail.axes.split(',')">
-            {{axe}}
-          </li>
-        </ul>
-      </div>
-      <div class="col-xs-4">
-        <h3>Exemples </h3>
-        <ul>
-          <li ng-repeat="exemple in exemples | filter:{theme: detail.name}">
-            <a ng-href="{{exemple.url}}">
-              {{exemple.label}}
-            </a>
-          </li>
-        </ul>
+        <div class="col-xs-4">
+          <h3>Exemples </h3>
+          <ul>
+            <li ng-repeat="exemple in exemples | filter:{theme: detail.name}">
+              <a ng-href="{{exemple.url}}">
+                {{exemple.label}}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <p class="text-center bt-out"><a ng-click="to('global')" class="bt bt-global">Budget global</a></p>

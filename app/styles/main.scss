@@ -4,6 +4,16 @@
 @import 'tools.scss';
 @import 'landscape.scss';
 
+// keyframes mixin
+@include keyframes(fade) {
+    0% {        
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;         
+    }
+}
+
 html body {
 
     .main {
@@ -25,6 +35,10 @@ html body {
             height:560px;
             overflow:hidden;
         }
+    }
+
+    .do-fade {
+        @include animation("fade 0.7s");
     }
 
     h2, h3 {
@@ -253,9 +267,9 @@ html body {
 
         &:before {
             position:absolute;
-            top:-13px;
+            top:(37px/-2);
             left:50%;
-            margin-left:-17px;
+            margin-left:(37px/-2);
             content:url("../images/ui/triangle.png");
         }
 
