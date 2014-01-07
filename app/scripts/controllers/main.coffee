@@ -30,9 +30,9 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     # Refresh active detail data
     refreshDetail = ->
         # Fade animation on .js-title
-        #ephemeralClass $rootElement.find(".js-fade"), 'do-fade', 700, ->
-        # Find the data related to this zone
-        $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
+        ephemeralClass $rootElement.find(".js-fade"), 'do-fade', 700, ->
+            # Find the data related to this zone
+            $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
     # Read location argument to update the screen
     readLocation = ->
         # Are we coming from the homepage?
