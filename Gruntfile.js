@@ -1,12 +1,6 @@
 // Generated on 2013-12-30 using generator-angular 0.7.1
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -30,10 +24,6 @@ module.exports = function (grunt) {
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
         tasks: ['newer:coffee:dist']
-      },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
-        tasks: ['newer:coffee:test', 'karma']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -69,16 +59,6 @@ module.exports = function (grunt) {
           open: true,
           base: [
             '.tmp',
-            '<%= yeoman.app %>'
-          ]
-        }
-      },
-      test: {
-        options: {
-          port: 9001,
-          base: [
-            '.tmp',
-            'test',
             '<%= yeoman.app %>'
           ]
         }
@@ -153,15 +133,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/scripts',
           src: '{,*/}*.coffee',
           dest: '.tmp/scripts',
-          ext: '.js'
-        }]
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: 'test/spec',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/spec',
           ext: '.js'
         }]
       }
@@ -303,9 +274,9 @@ module.exports = function (grunt) {
             dest: '<%= yeoman.dist %>',
             src: [
               'data/*',
-              'bower_components/json3/{,*/}*', 
-              'bower_components/es5-shim/{,*/}*', 
-              'bower_components/raphael/{,*/}*', 
+              'bower_components/json3/{,*/}*',
+              'bower_components/es5-shim/{,*/}*',
+              'bower_components/raphael/{,*/}*',
               'bower_components/r2d3/{,*/}*',
               'bower_components/d3/{,*/}*',
               '{,*/}*.html'
@@ -327,50 +298,12 @@ module.exports = function (grunt) {
         'coffee:dist',
         'compass:server'
       ],
-      test: [
-        'coffee',
-        'compass'
-      ],
       dist: [
         'coffee',
         'compass:dist',
         'imagemin',
         'svgmin'
       ]
-    },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
     }
   });
 
@@ -394,14 +327,6 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve']);
   });
-
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
 
   grunt.registerTask('build', [
     'clean:dist',
