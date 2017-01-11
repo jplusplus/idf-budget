@@ -253,6 +253,12 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      images: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/images',
+        dest: 'dist/images/',
+        src: '{,*/}*'
+      },
       dist: {
         files: [
           {
@@ -291,21 +297,10 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
-
-    // Run some tasks in parallel to speed up the build process
-    concurrent: {
-      server: [
-        'coffee:dist',
-        'compass:server'
-      ],
-      dist: [
-        'coffee',
-        'compass:dist',
-        'imagemin',
-        'svgmin'
-      ]
-    }
   });
+
+  grunt.registerTask('prepare:server', ['coffee:dist', 'compass:server']);
+  grunt.registerTask('prepare:dist', ['coffee', 'compass:dist', 'copy:images', 'svgmin']);
 
 
   grunt.registerTask('serve', function (target) {
@@ -316,7 +311,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'bower-install',
-      'concurrent:server',
+      'prepare:server',
       'autoprefixer',
       'connect:livereload',
       'watch'
@@ -332,7 +327,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'bower-install',
     'useminPrepare',
-    'concurrent:dist',
+    'prepare:dist',
     'autoprefixer',
     'concat',
     'ngmin',
