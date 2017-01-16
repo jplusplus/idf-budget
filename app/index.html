@@ -23,6 +23,10 @@
     <!-- build:css({.tmp,app}) styles/main.css-->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild-->
+    <script type="text/javascript">
+      var href = document.location.protocol + "//" + document.location.host + document.location.pathname;
+      document.write("<base href='" + href + "' />");
+    </script>
   </head>
   <body ng-app="idfBudgetApp">
 
