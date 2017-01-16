@@ -1,16 +1,16 @@
 id,picture,color1,color2,name,budget,investissement,fonctionnement,part,axes
-1,pilotis,#40636b,#6a99a9,Actions internationales et européennes,"8,8","2,7","6,1","0,2","Expertise sur la croissance urbaine avec pays ne relevant plus de l'aide publique au développemet, solidarité avec les autres."
-6,conseil-regional,#b27f5d,#d19b7d,Administration régionale,"73,4","7,7","65,7","1,6","Charges de fonctionnement en baisse de 2,7% en un an et dépenses de communication de 4%. "
-7,nouvel-amenagement,#a56434,#cc7236,Aménagement,"147,3","119,5","27,8","3,2",An I de la mise en œuvre du Schéma directeur régional d'aménagement. 
-3,cinema,#245f7f,#5b90a3,Culture,"95,6","33","62,6","2,1","Emploi des artistes et du monde culturel, aides aux musiqes actuelles et aux fabriques de culture."
-11,usine,#5e6e72,#748589,"Développement économique, innovation, tourisme","234,6","165,6",69,"5,1","Transition écologique et sociale,  numérique, entreprises en difficulté, quartiers."
-4,hopital,#507568,#6aa08d,Développement social et santé,"256,6","69","187,6","5,6","Meilleur accès aux soins, protection de la santé, effort sur les formations sanitaires et sociales."
-12,lycee,#b57e47,#d18f59,Enseignement secondaire ,"655,1","408","247,1","14,2","Rénovation des bâtiments, numérique éducatif, décrochage scolaire, mobilité internationale."
-8,universite,#a3522f,#cc6440,Enseignement supérieur et recherche,"134,6","102","32,6","2,9","Logements sociaux pour étudiants, Très haut débit, soutien à l'empoi scientifique."
-15,foret,#9b9e12,#bcbc1b,Environnement,"140,3","105,1","35,2","3","Transition énergétique, politique agricole ambitieuse."
-13,boulangerie,#ad4944,#e55f51,"Formation professionnelle, apprentissage et emploi","728,2","37,4","690,8","15,8","Formation tout au long de la vie, service public de l'orientation, soutien aux publics les plus en difficulté sur le marché du travail."
-14,immeuble,#cc5d1f,#ef6926,Logement,"174,1","173","1,1","3,8","Construction de logements sociaux et très sociaux, 4000 logements étudiants par an, lutte contre la précarité énergétique."
-5,tour,#597987,#779faa,Politique de la ville et renouvellement urbain,87,"78",9,"1,9","2e programme national de renouvellement urbain, nouvelle géographie prioritaire."
-10,securite,#32664c,#4a8467,Sécurité,"28,7","26","2,7","0,6","Sécurisation des lycées, de bases de plein air et de loisirs, des transports en commun."
-9,rampe,#a3553c,#cf7857,Sports et loisirs ,"60,4","51,5","8,9","1,3","Equipements sportifs structurants, développements des terrains synthétiques, entretien des bases de loisirs, rénovation des piscines."
-2,gare,#aa5129,#dd6940,Transports,1779,"995",784,"38,6",40 chantiers en phase de travaux ou en passe de l'être.
+1,pilotis,#40636b,#6a99a9,"Actions européennes, internationales et tourisme","214,1","111,7","102,5","5,1",
+2,gare,#aa5129,#dd6940,Transports et mobilités,"1503,8",738,"765,8","35,9",
+3,cinema,#245f7f,#5b90a3,Culture,93,"40,7","52,4","2,2",
+4,hopital,#507568,#6aa08d,"Social, santé, famille","217,4","18,5",199,"5,2",
+6,conseil-regional,#b27f5d,#d19b7d,Administration régionale,"83,7","21,5","62,3",2,
+7,nouvel-amenagement,#a56434,#cc7236,Aménagement,"70,8","51,4","19,4","1,7",
+8,universite,#a3522f,#cc6440,Enseignement supérieur et recherche,"103,5","78,6","24,9","2,5",
+9,rampe,#a3553c,#cf7857,"Sports, loisirs, jeunesse, vie associative, citoyenneté","69,4","46,4",23,"1,7",
+10,securite,#32664c,#4a8467,Sécurité,"21,8",21,"0,8","0,5",
+11,usine,#5e6e72,#748589,"Développement économique, innovation","185,9",141,"44,9","4,4",
+12,lycee,#b57e47,#d18f59,Enseignement secondaire,"774,4",505,"269,4","18,5",
+13,boulangerie,#ad4944,#e55f51,"Formation professionnelle, apprentissage, emploi",622,28,594,"14,8",
+14,immeuble,#cc5d1f,#ef6926,Logement et politique de la ville,"92,1","91,1",1,"2,2",
+15,foret,#9b9e12,#bcbc1b,Environnement et énergie,"108,3","86,1","22,2","2,6",
+16,tracteur,#f75301,#f79c6f,Agriculture et ruralité,"32,7","22,5","10,2","0,8",

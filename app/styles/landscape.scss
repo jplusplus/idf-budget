@@ -19,7 +19,7 @@
         left:0px;
         top:0px;
         height:168px;
-        width:4095px;
+        width:4700px;
         background:url("../images/landscape/nuages.png") repeat-x;
         z-index:$zindex-landscape + 10;
     }
@@ -229,9 +229,17 @@
     }
 
     .zone-15{
-        left:3424px;
-        top:62px;
-        width:671px;
-        height:245px;
+    	left:3420px;
+    	top:62px;
+    	width:490px;
+    	height:246px;
     }
+
+    .zone-16 {
+    	left:4100px;
+    	top:150px;
+    	width:251px;
+    	height:149px;
+    }
+
 }

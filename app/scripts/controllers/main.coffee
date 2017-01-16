@@ -16,11 +16,11 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
             base = rows.shift()
             # Transform each row to an object
             rows = _.map rows, (r)-> _.object(base, r)
-    
+
     ephemeralClass = (what=$rootElement, cls='fade', duration=700, callback=->)->
         what.addClass cls
         # Remove the class after a short delay
-        setTimeout -> 
+        setTimeout ->
             what.removeClass cls
             callback()
             # Refresh the scope
@@ -32,7 +32,7 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         # Fade animation on .js-title
         ephemeralClass $rootElement.find(".js-fade"), 'do-fade', 700, ->
             # Find the data related to this zone
-            $scope.detail = $scope.details[$scope.activeZone-1] if $scope.details?
+            $scope.detail = $scope.getDetail($scope.activeZone) if $scope.details?
     # Read location argument to update the screen
     readLocation = ->
         # Are we coming from the homepage?
@@ -47,6 +47,9 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         if $scope.screen is 'global' then FRAME.scrollTo(top: 250, left:0, 600)
         # Or reset the scroll
         else FRAME.scrollTo(0, 600)
+    # Find current index
+    activeZoneIndex = =>
+      _.findIndex $scope.details, id: $scope.activeZone
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods inside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -57,6 +60,18 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
         # Only if we received a model attrbiute
         $scope.activeZone = val if val
         $scope.activeZone
+    # Go to the next
+    $scope.next = =>
+      # Find current index and add one to retreive the id
+      $scope.activeZone = $scope.details[activeZoneIndex() + 1].id
+    # Go to the previouus
+    $scope.prev = ->
+      # Find current index and remove 1
+      $scope.activeZone = $scope.details[activeZoneIndex() - 1].id
+    # Nav helpers
+    $scope.hasNext = -> $scope.details[activeZoneIndex() + 1]?
+    $scope.hasPrev = -> $scope.details[activeZoneIndex() - 1]?
+    $scope.getDetail = (id)-> _.find $scope.details, id: id
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Scope attributes
     # ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -71,11 +86,9 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     # Get all details
     $http.get('/data/details.csv').success (raw)->
         # Parses and sorts data by id
-        $scope.details = _.sortBy csvToObject(raw), (d)-> d.id
+        $scope.details = _.sortBy csvToObject(raw), (d)-> Number(d.id)
         # Then refresh the active detail
         refreshDetail()
-    # Get all exemples
-    $http.get('/data/exemples.csv').success (raw)-> $scope.exemples = csvToObject(raw)
     # Get budget composition
     $http.get('/data/budget.csv').success (raw)-> $scope.budget = csvToObject(raw)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
