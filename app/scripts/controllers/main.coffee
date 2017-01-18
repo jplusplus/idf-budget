@@ -84,13 +84,13 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     # XHR data loading
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Get all details
-    $http.get('/data/details.csv').success (raw)->
+    $http.get('./data/details.csv').success (raw)->
         # Parses and sorts data by id
         $scope.details = _.sortBy csvToObject(raw), (d)-> Number(d.id)
         # Then refresh the active detail
         refreshDetail()
     # Get budget composition
-    $http.get('/data/budget.csv').success (raw)-> $scope.budget = csvToObject(raw)
+    $http.get('./data/budget.csv').success (raw)-> $scope.budget = csvToObject(raw)
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Watchers
     # ──────────────────────────────────────────────────────────────────────────────────────────────
