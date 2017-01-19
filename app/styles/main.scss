@@ -192,6 +192,7 @@ html body {
     right:-100%;
     background:black;
     display:none;
+    overflow:hidden;
     @include opacity(0.2);
 
     .home & {
