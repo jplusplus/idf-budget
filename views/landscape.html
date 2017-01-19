@@ -1,0 +1,104 @@
+<div id="landscape" landscape="landscape" background=".clouds" wrapper=".all" listen="activeZone">
+
+  <!-- Empty block that shows clouds -->
+  <div class="clouds"></div>
+
+  <!-- Empty block that shows every zones -->
+  <div class="all"></div>
+
+  <!-- Empty block that shows the foreground -->
+  <div class="foreground"></div>
+
+  <!-- Empty block to center the scroll on hp-->
+  <div class="home-center"></div>
+
+  <div ng-class="{active: activeZone == 1}" class="zone-1 zone">
+    <div ng-click="zone(1)" class="clickable"></div>
+    <div ng-style="{color: getDetail(1).color1}" class="name">{{getDetail(1).name}}</div>
+    <img src="images/landscape/01-pilotis.png" width="250" height="212"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 2}" class="zone-2 zone">
+    <div ng-click="zone(2)" class="clickable"></div>
+    <div ng-style="{color: getDetail(2).color1}" class="name">{{getDetail(2).name}}</div>
+    <img src="images/landscape/02-gare.png" width="342" height="191"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 3}" class="zone-3 zone">
+    <div ng-click="zone(3)" class="clickable"></div>
+    <div ng-style="{color: getDetail(3).color1}" class="name">{{getDetail(3).name}}</div>
+    <img src="images/landscape/03-cinema.png" width="257" height="232"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 4}" class="zone-4 zone">
+    <div ng-click="zone(4)" class="clickable"></div>
+    <div ng-style="{color: getDetail(4).color1}" class="name">{{getDetail(4).name}}</div>
+    <img src="images/landscape/04-hopital.png" width="432" height="194"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 6}" class="zone-6 zone">
+    <div ng-click="zone(6)" class="clickable"></div>
+    <div ng-style="{color: getDetail(6).color1}" class="name">{{getDetail(6).name}}</div>
+    <img src="images/landscape/06-conseil-regional.png" width="251" height="231"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 7}" class="zone-7 zone">
+    <div ng-click="zone(7)" class="clickable"></div>
+    <div ng-style="{color: getDetail(7).color1}" class="name">{{getDetail(7).name}}</div>
+    <img src="images/landscape/07-nouvel-amenagement.png" width="333" height="206"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 8}" class="zone-8 zone">
+    <div ng-click="zone(8)" class="clickable"></div>
+    <div ng-style="{color: getDetail(8).color1}" class="name">{{getDetail(8).name}}</div>
+    <img src="images/landscape/08-universite.png" width="324" height="215"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 9}" class="zone-9 zone">
+    <div ng-click="zone(9)" class="clickable"></div>
+    <div ng-style="{color: getDetail(9).color1}" class="name">{{getDetail(9).name}}</div>
+    <img src="images/landscape/09-rampe.png" width="273" height="172"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 10}" class="zone-10 zone">
+    <div ng-click="zone(10)" class="clickable"></div>
+    <div ng-style="{color: getDetail(10).color1}" class="name">{{getDetail(10).name}}</div>
+    <img src="images/landscape/10-securite.png" width="323" height="179"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 11}" class="zone-11 zone">
+    <div ng-click="zone(11)" class="clickable"></div>
+    <div ng-style="{color: getDetail(11).color1}" class="name">{{getDetail(11).name}}</div>
+    <img src="images/landscape/11-usine.png" width="272" height="208"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 12}" class="zone-12 zone">
+    <div ng-click="zone(12)" class="clickable"></div>
+    <div ng-style="{color: getDetail(12).color1}" class="name">{{getDetail(12).name}}</div>
+    <img src="images/landscape/12-lycee.png" width="265" height="214"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 13}" class="zone-13 zone">
+    <div ng-click="zone(13)" class="clickable"></div>
+    <div ng-style="{color: getDetail(13).color1}" class="name">{{getDetail(13).name}}</div>
+    <img src="images/landscape/13-boulangerie.png" width="251" height="190"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 14}" class="zone-14 zone">
+    <div ng-click="zone(14)" class="clickable"></div>
+    <div ng-style="{color: getDetail(14).color1}" class="name">{{getDetail(14).name}}</div>
+    <img src="images/landscape/14-immeuble.png" width="215" height="229"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 15}" class="zone-15 zone">
+    <div ng-click="zone(15)" class="clickable"></div>
+    <div ng-style="{color: getDetail(15).color1}" class="name">{{getDetail(15).name}}</div>
+    <img src="images/landscape/15-foret.png" width="490" height="246"/>
+  </div>
+
+  <div ng-class="{active: activeZone == 16}" class="zone-16 zone">
+    <div ng-click="zone(16)" class="clickable"></div>
+    <div ng-style="{color: getDetail(16).color1}" class="name">{{getDetail(16).name}}</div>
+    <img src="images/landscape/16-tracteur.png" width="251" height="149"/>
+  </div>
+</div>
