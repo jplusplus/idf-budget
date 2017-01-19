@@ -263,22 +263,11 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            dest: '<%= yeoman.dist %>',
-            cwd: 'server',
-            src: '*',
-            rename: function (dest, src) {
-              var path = require('path');
-              if (src === 'distpackage.json') {
-                return path.join(dest, 'package.json');
-              }
-              return path.join(dest, src);
-            }
-          }, {
-            expand: true,
             dot: true,
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
+              'favicon.ico',
               'data/*',
               'bower_components/json3/{,*/}*',
               'bower_components/es5-shim/{,*/}*',

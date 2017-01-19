@@ -294,6 +294,7 @@ html body {
             margin-left: (-371px/2);
             z-index:10;
             opacity:1;
+            pointer-events: none;
             @include transition(opacity 600ms);
 
             &.pie-others {
@@ -306,6 +307,7 @@ html body {
 
         .js-bound-draw {
             z-index:20;
+            pointer-events: none;
         }
 
 
