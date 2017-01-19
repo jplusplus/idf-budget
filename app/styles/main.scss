@@ -222,8 +222,9 @@ html body {
     .bt-out {
         position:absolute;
         top:100%;
-        left:0;
-        right:0;
+        left:50%;
+        width:180px;
+        margin-left:-90px;
         margin-top:-25px;
     }
 
@@ -427,7 +428,6 @@ html body {
 
 footer {
     z-index:$zindex-footer;
-
     position:fixed;
     left:50%;
     top:530px;
