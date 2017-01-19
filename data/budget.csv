@@ -1,21 +1,21 @@
 type,label,montant,part,visible,to
-recettes,Autres recettes fiscales (hors TICPE),"1245,91",24,1,0;0
-recettes,Taxe Intérieure de Consommation sur les Produits Energétiques (TICPE),"1136,78",22,1,0;0
-recettes,Fiscalité directe,"839,21",16,1,0;0
-recettes,Emprunt,"800,12",15,1,0;0
-recettes,Dotations,"628,86",12,1,0;0
-recettes,Recettes diverses,"599,63",11,1,0;0
-depenses,Transports et mobilités,"1503,8","35,9",1,0;0
-depenses,Enseignement secondaire,"774,4","18,5",1,0;0
-depenses,"Formation professionnelle, apprentissage, emploi",622,"14,8",1,0;0
-depenses,"Social, santé, famille","217,4","5,2",1,0;0
-depenses,"Actions européennes, internationales et tourisme","214,1","5,1",1,0;0
-depenses,"Développement économique, innovation","185,9","4,4",1,0;0
-depenses,Environnement et énergie,"108,3","2,6",1,0;0
-depenses,Enseignement supérieur et recherche,"103,5","2,5",1,0;0
-depenses,Culture,93,"2,2",1,0;0
-depenses,Logement et politique de la ville,"92,1","2,2",1,0;0
-depenses,Administration régionale,"83,7",2,1,0;0
+recettes,Autres recettes fiscales (hors TICPE),"1245,91",24,1,408;153
+recettes,Taxe Intérieure de Consommation sur les Produits Energétiques (TICPE),"1136,78",22,1,343;215
+recettes,Fiscalité directe,"839,21",16,1,329;289
+recettes,Emprunt,"800,12",15,1,351;348
+recettes,Dotations,"628,86",12,1,392;385
+recettes,Recettes diverses,"599,63",11,1,435;402
+depenses,Transports et mobilités,"1503,8","35,9",1,537;172
+depenses,Enseignement secondaire,"774,4","18,5",1,590;255
+depenses,"Formation professionnelle, apprentissage, emploi",622,"14,8",1,582;317
+depenses,"Social, santé, famille","217,4","5,2",1,565;351
+depenses,"Actions européennes, internationales et tourisme","214,1","5,1",1,551;365
+depenses,"Développement économique, innovation","185,9","4,4",1,538;377
+depenses,Environnement et énergie,"108,3","2,6",1,524;383
+depenses,Enseignement supérieur et recherche,"103,5","2,5",1,516;388
+depenses,Culture,93,"2,2",1,506;390
+depenses,Logement et politique de la ville,"92,1","2,2",1,497;393
+depenses,Administration régionale,"83,7",2,1,491;394
 depenses,Aménagement,"70,8","1,7",0,0;0
 depenses,"Sports, loisirs, jeunesse, vie associative, citoyenneté","69,4","1,7",0,0;0
 depenses,Agriculture et ruralité,"32,7","0,8",0,0;0
