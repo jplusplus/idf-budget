@@ -86,6 +86,10 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     $http.get('./data/details.csv').success (raw)->
         # Parses and sorts data by id
         $scope.details = _.sortBy csvToObject(raw), (d)-> Number(d.id)
+        # Parse number
+        _.each $scope.details, (d)->
+          d.investissement_number = Number String(d.investissement).replace(/,/, '.')
+          d.fonctionnement_number = Number String(d.fonctionnement).replace(/,/, '.')
         # Then refresh the active detail
         $scope.detail = $scope.getDetail $scope.activeZone
     # Get budget composition
