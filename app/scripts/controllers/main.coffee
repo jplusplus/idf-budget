@@ -1,6 +1,6 @@
 angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http, $rootElement) ->
     # Constants
-    DEFAULT_ZONE = 8
+    DEFAULT_ZONE = 1
     HOME_ZONE    = '.home-center'
     # Parent frame
     FRAME        = $rootElement.find(".scrollable")
