@@ -8,3 +8,6 @@ run:
 
 build:
 	./node_modules/.bin/grunt build
+
+deploy: build
+	./node_modules/.bin/grunt gh-pages
