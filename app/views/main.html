@@ -70,7 +70,7 @@
   </div>
 
   <!-- Global budget-->
-  <div class="workspace workspace-global" ng-class="{'show-others': show_others}">
+  <div class="workspace workspace-global" ng-class="{'show-others': show_others}"  ng-mouseleave="show_others = false" ng-mouseenter="show_others = false">
     <h2 class="top-50 bottom-30 text-center">Budget global</h2>
 
     <img src="./images/charts/global.png" class="pie" />
