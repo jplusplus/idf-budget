@@ -41,12 +41,18 @@
           <h3>Budget&nbsp;: {{detail.budget}} M€</h3>
           <div ng-style="{color: detail.color1}">
             <div class="color-inherit">
-              <h4>Investissement</h4>{{detail.investissement}} millions €
+              <h4>Investissement</h4>
+              {{ detail.investissement }}
+              <span ng-if="detail.investissement_number <  2">million €</span>
+              <span ng-if="detail.investissement_number >= 2">millions €</span>
             </div>
           </div>
           <div ng-style="{color: detail.color2}">
             <div class="color-inherit">
-              <h4>Fonctionnement</h4>{{detail.fonctionnement}} millions €
+              <h4>Fonctionnement</h4>
+              {{ detail.fonctionnement }}
+              <span ng-if="detail.fonctionnement_number <  2">million €</span>
+              <span ng-if="detail.fonctionnement_number >= 2">millions €</span>
             </div>
           </div>
         </div>
