@@ -268,10 +268,6 @@ html body {
             margin-left:(37px/-2);
             content:url("../images/ui/triangle.png");
         }
-
-        ul li:first-letter {
-            text-transform:uppercase;
-        }
     }
 
     &.workspace-global {
@@ -358,6 +354,7 @@ html body {
                 position:relative;
                 z-index:30;
                 overflow: hidden;
+                cursor: pointer;
 
                 strong {
                     background:url("../images/ui/point.png") no-repeat center left;
