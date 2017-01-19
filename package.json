@@ -2,7 +2,8 @@
   "name": "idfbudget",
   "version": "0.0.0",
   "dependencies": {
-    "grunt-cli": "^1.2.0"
+    "grunt-cli": "^1.2.0",
+    "grunt-gh-pages": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

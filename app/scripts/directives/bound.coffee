@@ -75,7 +75,7 @@ angular.module('idfBudgetApp').directive 'bound', () ->
         # Show and hide the element
         element.hover ->
             # Draws the point with updated coordonates
-            draw()
+            # draw()
             # Removes hidden class
             workspace.removeClass("hidden")
         , ->

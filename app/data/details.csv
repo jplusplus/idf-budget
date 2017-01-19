@@ -1,16 +1,17 @@
 id,picture,color1,color2,name,budget,investissement,fonctionnement,part,axes
-1,pilotis,#40636b,#6a99a9,"Actions européennes, internationales et tourisme","214,1","111,7","102,5","5,1",
-2,gare,#aa5129,#dd6940,Transports et mobilités,"1503,8",738,"765,8","35,9",
-3,cinema,#245f7f,#5b90a3,Culture,93,"40,7","52,4","2,2",
-4,hopital,#507568,#6aa08d,"Social, santé, famille","217,4","18,5",199,"5,2",
-6,conseil-regional,#b27f5d,#d19b7d,Administration régionale,"83,7","21,5","62,3",2,
-7,nouvel-amenagement,#a56434,#cc7236,Aménagement,"70,8","51,4","19,4","1,7",
-8,universite,#a3522f,#cc6440,Enseignement supérieur et recherche,"103,5","78,6","24,9","2,5",
-9,rampe,#a3553c,#cf7857,"Sports, loisirs, jeunesse, vie associative, citoyenneté","69,4","46,4",23,"1,7",
-10,securite,#32664c,#4a8467,Sécurité,"21,8",21,"0,8","0,5",
-11,usine,#5e6e72,#748589,"Développement économique, innovation","185,9",141,"44,9","4,4",
-12,lycee,#b57e47,#d18f59,Enseignement secondaire,"774,4",505,"269,4","18,5",
-13,boulangerie,#ad4944,#e55f51,"Formation professionnelle, apprentissage, emploi",622,28,594,"14,8",
-14,immeuble,#cc5d1f,#ef6926,Logement et politique de la ville,"92,1","91,1",1,"2,2",
-15,foret,#9b9e12,#bcbc1b,Environnement et énergie,"108,3","86,1","22,2","2,6",
-16,tracteur,#f75301,#f79c6f,Agriculture et ruralité,"32,7","22,5","10,2","0,8",
+1,pilotis,#40636b,#6a99a9,"Tourisme, actions européennes et internationales","214,1","111,7","102,5","5,1","Développement de l'attractivité du territoire::Mobilisation des crédits européens (184,5 M€ en 2017 contre 23 M€ en 2015)::Soutien aux professionnels du tourisme et renforcement de l'accueil et de la sécurité des touristes"
+2,gare,#aa5129,#dd6940,Transports et mobilités,"1503,8",738,"765,8","35,9",Renouvellement du matériel roulant::Prolongement d'Eole et électrification de la ligne P::Plan 1 000 bus::Plan vélo
+3,cinema,#245f7f,#5b90a3,Culture,93,"40,7","52,4","2,2","Soutien au cinéma et à l'audiovisuel::Faire entrer la culture dans les lycées::Valorisation du patrimoine francilien (4,2M€)::Fonds de soutien aux talents émergents"
+4,hopital,#507568,#6aa08d,"Social, santé, famille","217,4","18,5",199,"5,2","Lutte contre la désertification médicale (3 M€)::Aide aux personnes en situation de handicap (6,5 M€)::Soutien aux femmes en difficultés (2,3 M€) et aux personnes en situation de précarité (3,3 M€)
+"
+6,conseil-regional,#b27f5d,#d19b7d,Administration régionale,"83,7","21,5","62,3",2,Généralisation de l’open data et transparence de l'action publique régionale::Réduction des dépenses de fonctionnement : 253 M€ d’économies en 2 ans
+7,nouvel-amenagement,#a56434,#cc7236,Aménagement,"70,8","51,4","19,4","1,7",100 nouveaux quartiers innovants et écologiques::Renouvellement urbain (15 M€)
+8,universite,#a3522f,#cc6440,Enseignement supérieur et recherche,"103,5","78,6","24,9","2,5",Bourses DEAU::Bourses au mérite pour les bacheliers mentions TB::Financements de nouveaux DIM
+9,rampe,#a3553c,#cf7857,"Sports, loisirs, jeunesse, vie associative, citoyenneté","69,4","46,4",23,"1,7","Construction et rénovation des équipements sportifs (8M€)::Mobilisation pour la candidature Paris 2024::Encourager la pratique sportive (3,7M€)::Lutte contre les violences faites aux femmes::Plan d'action pour l'égalité entre les hommes et les femmes"
+10,securite,#32664c,#4a8467,Sécurité,"21,8",21,"0,8","0,5","Sécurisation des lycées (10,3 M€)::Aide à la vidéoprotection dans les communes et à l’équipement des polices municipales::Aide au financement de la rénovation de commissariats et de casernes::Vidéosurveillance dans les gares routières et dans les transports"
+11,usine,#5e6e72,#748589,"Développement économique, innovation","185,9",141,"44,9","4,4",Soutien aux entreprises innovantes (Innov’Up)::Soutien aux incubateurs (6 M)::Déploiement du Très haut débit (15 M€)::Développement des tiers-lieux (3 M€)
+12,lycee,#b57e47,#d18f59,Lycées,"774,4",505,"269,4","18,5",Nouveau plan d’investissement dans les lycées::13 nouvelles opérations de rénovation/reconstruction::Lutte contre le décrochage scolaire::Multiplication par 2 du budget d’autonomie des lycées
+13,boulangerie,#ad4944,#e55f51,"Formation professionnelle, apprentissage, emploi",622,28,594,"14,8",4 000 apprentis supplémentaires en 2017::Augmentation du financement des CFA (130 contrats de performance)::Accompagnement de 125 000 demandeurs d'emploi supplémentaires
+14,immeuble,#cc5d1f,#ef6926,Logement et politique de la ville,"92,1","91,1",1,"2,2",75 000 nouveaux logements par an::Plan de rénovation urbaine::Mobilisation du foncier régional::Plan anti-ghetto::Relance du financement du logement social intermédiaire
+15,foret,#9b9e12,#bcbc1b,Environnement et énergie,"108,3","86,1","22,2","2,6",Lutte contre la pollution de l'air::Fonds propreté pour lutter contre les dépôts sauvages (4M€)::Protection des espaces naturels et végétalisation des villes (plan Vert)
+16,tracteur,#f75301,#f79c6f,Agriculture et ruralité,"32,7","22,5","10,2","0,8",Nouveaux contrats ruraux::Sauvegarde du commerce de proximité::Pacte agricole
