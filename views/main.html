@@ -59,9 +59,7 @@
         <div class="col-xs-5 col-border">
           <h3>Axes forts </h3>
           <ul>
-            <li ng-repeat="axe in detail.axes.split('::')">
-              {{axe}}
-            </li>
+            <li ng-repeat="axe in detail.axes.split('::')" ng-bind-html="axe"></li>
           </ul>
         </div>
       </div>
@@ -94,7 +92,7 @@
       </li>
       <li ng-mouseenter="show_others = true" class="show-others">
         <strong>
-          5.7%
+          4.6%
         </strong>
         <span class="label label-warning">Autres</span>
       </li>
