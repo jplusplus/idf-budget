@@ -5,7 +5,7 @@ angular.module('idfBudgetApp').controller 'MainCtrl', ($scope, $location, $http,
     # Parent frame
     FRAME        = $rootElement.find(".scrollable")
     # DUMMY HELPER TO PLACE BUDGET POINTS
-    # $rootElement.find('.workspace-global').on 'click', (ev)-> console.log [ev.offsetX, ev.offsetY].join(';')
+    $rootElement.find('.workspace-global').on 'click', (ev)-> console.log [ev.offsetX, ev.offsetY].join(';')
     # ──────────────────────────────────────────────────────────────────────────────────────────────
     # Methods outside the scope
     # ──────────────────────────────────────────────────────────────────────────────────────────────
